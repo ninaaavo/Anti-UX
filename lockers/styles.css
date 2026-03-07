@@ -10,7 +10,7 @@ img{
     width: 100%;
     
 }
-.grid-box{
+#grid-box{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 2%;
@@ -20,14 +20,14 @@ img{
 
 /* break point for tablet */
 @media (max-width: 768px){
-    .grid-box{
+    #grid-box{
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 /* break point 4 phone */
 @media (max-width: 480px){
-    .grid-box{
+    #grid-box{
         grid-template-columns: repeat(3, 1fr);
     }
 }

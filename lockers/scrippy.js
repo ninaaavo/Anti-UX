@@ -1,8 +1,25 @@
+// setting up imgs html
+
+const imgs = new Array(12).fill("single_locker.jpg");
+
+let imgsHTML = "";
+let emptyImg =  "empty.png";
+
+imgs.forEach((img, ind) => {
+  imgsHTML += `<img src="${img}" class="locker" id="lock${ind}" />`;
+});
+const gridBox = document.getElementById("grid-box");
+gridBox.innerHTML = imgsHTML;
+
+// Define vars
 const lockers = Array.from(document.getElementsByClassName("locker"));
+const lockerCount = lockers.length;
 const overlay = document.getElementById("overlay");
 const zoomedLocker = document.getElementById("zoomedLocker");
-console.log("yoooo");
-console.log("all lockers", lockers[0]);
+let unopenedLockers = new Set();
+currentLockeID = -1;
+for (let i = 0; i < lockerCount; i++) unopenedLockers.add(i);
+console.log("unopen", unopenedLockers);
 
 // When click on a locker, show the question
 console.log(Array.isArray(lockers));
@@ -10,6 +27,7 @@ lockers.forEach((locker, ind) => {
   locker.addEventListener("click", (event) => {
     if (overlay.classList.contains("hidden")) {
       event.stopPropagation();
+      currentLockerID = ind;
       zoomedLocker.src = locker.src;
       displayQuestion();
       overlay.classList.remove("hidden");
@@ -18,14 +36,18 @@ lockers.forEach((locker, ind) => {
   });
 });
 
+function hideOverlay(){
+  overlay.classList.add("hidden");
+  curLocker = -1;
+}
+
 // when click outside of overlay, exit
 document.addEventListener("click", (event) => {
   if (
     !overlay.contains(event.target) &&
     !overlay.classList.contains("hidden")
   ) {
-    console.log("clicked outside");
-    overlay.classList.add("hidden");
+    hideOverlay()
   }
 });
 
@@ -144,7 +166,6 @@ let response = {};
 function displayQuestion() {
   const q = questions[curQuestion];
   const area = document.getElementById("question-area");
-  console.log("cur q is", q);
   let prompt = response["name"] ? response["name"] + ", " + q.prompt : q.prompt;
   let html = `<p>${prompt}</p>`;
 
@@ -213,6 +234,17 @@ function saveResponse() {
   return true;
 }
 
+function changeLockerDisplay(){
+  // change locker img to opened img 
+  unopenedLockers.delete(currentLockerID);
+  curLocker = lockers[currentLockerID];
+  curLocker.src = emptyImg;
+}
+
+function showSecret(){
+  // swap out the questions to the secret, after user unlocked the locker
+  
+}
 function clickSubmit() {
   let saveResult = saveResponse();
   if (!saveResult) {
@@ -222,9 +254,10 @@ function clickSubmit() {
     );
     return;
   }
-
+  changeLockerDisplay();
+  hideOverlay();
   curQuestion++;
-
+  
   if (curQuestion < questions.length) {
     displayQuestion();
   } else {
