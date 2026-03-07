@@ -37,16 +37,26 @@ img{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 40%;
-    width: 80%;
+    height: 40vh;
+    width: 80vw;
     background-color: gray;
+    padding: 10px 40px;
 }
 
 #zoomedLocker{
-    height: 80%;
-    width: auto;
+    width: 100%;
 }
 
 .hidden{
     display: none;
+}
+
+#big-grid-overlay{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 3fr 6fr;
+    gap: 20px;
+    align-items: center;
+    justify-items: center;
 }
