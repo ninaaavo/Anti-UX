@@ -1,35 +1,35 @@
 // all secrets
 
 const secrets = [
-`In high school, I stole the mp3 player of a classmate. Went into the locker room during PE and snatched it. I didn't steal it because I wanted it or to sell it, I just did it because she was an awful judgmental queen bee and I wanted to get back at her. People saw me with it in my hands, so the next day I was called into the principal's office. I denied everything and they searched my bag and my room.
+  `In high school, I stole the mp3 player of a classmate. Went into the locker room during PE and snatched it. I didn't steal it because I wanted it or to sell it, I just did it because she was an awful judgmental queen bee and I wanted to get back at her. People saw me with it in my hands, so the next day I was called into the principal's office. I denied everything and they searched my bag and my room.
 
 They never found it. I buried the MP3 player in my garden as soon as I got home, and that garden is now a mega store parking lot. I've never admitted it to anyone.`,
 
-`I'm tired of being an adult and just want someone to take care of me. I'm a single mom and the responsible caretaker person in some capacity for 35 of my 40 years. I have chronic health issues and I'm exhausted. Everyone sees me as dependable and responsible, but I wish I could take a long break where I don't have to worry about bills, decisions, or parenting.
+  `I'm tired of being an adult and just want someone to take care of me. I'm a single mom and the responsible caretaker person in some capacity for 35 of my 40 years. I have chronic health issues and I'm exhausted. Everyone sees me as dependable and responsible, but I wish I could take a long break where I don't have to worry about bills, decisions, or parenting.
 
 Also, my son gets extremely loud when gaming with his friends and it drives me insane. I feel guilty for getting irritated at him.`,
 
-`I'm in a 2 year relationship but I still think about my previous partner. Before my current boyfriend I had a thing with a guy who was already in a relationship. I fell madly in love with him, but he eventually broke things off with me out of nowhere. I never got closure.
+  `I'm in a 2 year relationship but I still think about my previous partner. Before my current boyfriend I had a thing with a guy who was already in a relationship. I fell madly in love with him, but he eventually broke things off with me out of nowhere. I never got closure.
 
 Now I really love my boyfriend, but I don't think I'll ever love him as much as I loved the other guy. I still see him sometimes and my heart stops.`,
 
-`In 1991 my business partner committed suicide by driving into a concrete barrier. He left a note on his computer explaining what he planned to do and apologizing for leaving me without a partner. I've never told anyone. Everyone thinks it was an accident.`,
+  `In 1991 my business partner committed suicide by driving into a concrete barrier. He left a note on his computer explaining what he planned to do and apologizing for leaving me without a partner. I've never told anyone. Everyone thinks it was an accident.`,
 
-`My friend hosted a birthday party and I found her passed out in vomit in her room. I rinsed her off in the shower and put her in bed. When I changed her clothes I realized she had soiled herself. I cleaned her up like a baby and put clean clothes on her. It was awkward explaining the next day, but I didn't want her to wake up like that.`,
+  `My friend hosted a birthday party and I found her passed out in vomit in her room. I rinsed her off in the shower and put her in bed. When I changed her clothes I realized she had soiled herself. I cleaned her up like a baby and put clean clothes on her. It was awkward explaining the next day, but I didn't want her to wake up like that.`,
 
-`We put the cat to sleep. We didn't find him already dead. He had cancer, feline HIV, and no teeth. He was suffering badly. We lied about it because someone in the family doesn't believe in euthanasia and would have forced him to suffer longer.`,
+  `We put the cat to sleep. We didn't find him already dead. He had cancer, feline HIV, and no teeth. He was suffering badly. We lied about it because someone in the family doesn't believe in euthanasia and would have forced him to suffer longer.`,
 
-`When I was 16 I accidentally ran over my friend's kitten while leaving her party. I felt the bump and knew what happened. I was terrified she'd never forgive me, so I kept driving. She called me crying later that night about it. We're still best friends today and she never knew.`,
+  `When I was 16 I accidentally ran over my friend's kitten while leaving her party. I felt the bump and knew what happened. I was terrified she'd never forgive me, so I kept driving. She called me crying later that night about it. We're still best friends today and she never knew.`,
 
-`I haven't wanted to be alive for a long time. Not actively suicidal, but passively. Sometimes the feeling is quiet and sometimes it's loud. The world is beautiful and terrifying at the same time and it's a lot to process.`,
+  `I haven't wanted to be alive for a long time. Not actively suicidal, but passively. Sometimes the feeling is quiet and sometimes it's loud. The world is beautiful and terrifying at the same time and it's a lot to process.`,
 
-`I wish I was never born.`,
+  `I wish I was never born.`,
 
-`If I feel ugly on a bad day, I can't go outside or interact with people. I feel completely incapable of functioning normally unless I look good.`,
+  `If I feel ugly on a bad day, I can't go outside or interact with people. I feel completely incapable of functioning normally unless I look good.`,
 
-`I want kids but my partner doesn't. I had an abortion last year and never told him that part of me didn't fully want it. I know admitting that would probably end our 11 year relationship, so I'll carry the grief alone.`,
+  `I want kids but my partner doesn't. I had an abortion last year and never told him that part of me didn't fully want it. I know admitting that would probably end our 11 year relationship, so I'll carry the grief alone.`,
 
-`In sixth grade I lied about being pregnant because nobody paid attention to me and I wanted someone to care.`
+  `In sixth grade I lied about being pregnant because nobody paid attention to me and I wanted someone to care.`,
 ];
 
 // setting up imgs html
@@ -59,7 +59,7 @@ for (let i = 0; i < lockerCount; i++) unopenedLockers.add(i);
 console.log("unopen", unopenedLockers);
 
 function refreshOverlay() {
-  locker = lockers[currentLockerID]
+  locker = lockers[currentLockerID];
   if (unopenedLockers.has(currentLockerID)) {
     // if the user hasnt opened this locker
     console.log("yu");
@@ -73,11 +73,10 @@ function refreshOverlay() {
     console.log("parent question", parentQuestion);
     secret.classList.remove("hidden");
     parentQuestion.classList.add("hidden");
-    secret.innerHTML = `<h1>${textData}</h1>`
+    secret.innerHTML = `<h1>${textData}</h1>`;
   }
 }
 // When click on a locker, show the overlay
-console.log(Array.isArray(lockers));
 lockers.forEach((locker, ind) => {
   locker.addEventListener("click", (event) => {
     if (overlay.classList.contains("hidden")) {
@@ -313,7 +312,7 @@ function clickSubmit() {
     return;
   }
   changeLockerDisplay();
-  refreshOverlay()
+  refreshOverlay();
   showSecret();
   curQuestion++;
 
@@ -323,8 +322,127 @@ function clickSubmit() {
     console.log("All responses:", response);
   }
 }
+
 document.getElementById("submit-btn").addEventListener("click", clickSubmit);
 document.addEventListener("keydown", (event) => {
   if (event.key === "Enter" && !overlay.classList.contains("hidden"))
     clickSubmit();
 });
+
+// ads hanndling
+
+const ads3 = {
+  // ads for first 3 demographic: name (no need) +  age + gender
+  gundam: {
+    title: "Gundam",
+    url: "https://www.usagundamstore.com/products/in-era-rmb-series-1-72-scale-fenrir-model",
+    tags: {
+      gender: new Set(["Male"]),
+      age: new Set(["Teenagers", "Young Adults"]),
+    },
+  },
+  tool_kit: {
+    title: "Home repair tool kit",
+    url: "https://www.amazon.com/Sundpey-Home-Tool-Kit-148-Pcs/dp/B09P3FTB6Y/ref=sr_1_3_sspa?dib=eyJ2IjoiMSJ9.d1Vm1jHQgkQA628dpvUlYzVyWTrNbQWgM-jIK1I7whCpvwgvTkcV3eo49e4dSqvmyGCJNFXwFntACSO3W4L9rEO7T8KvP1U4j9XginQXSIot-dOkGKidTrZzr63w-YjyMxKoArszL9HZsoYWxTzjBp5HiziYoVrRwIxjGrqaNJ0OJz9pv9A5ySFvR-7uC_MuogOSRptt4XthtvkgP6E8C-Fry34p5ON56XwVm-jnViCdZKCIgaXxHKgTxcnzqVVUAo_NRf7CzXZj7KjdVVPELmQ85NtsP0_eWj9QTWyLp6U.NBx79JdnBFwfuzLA0Q4Dg2uU-HQKRKCRXKnJy_NipEg&dib_tag=se&keywords=home%2Brepair%2Btool%2Bkit&qid=1772936350&sr=8-3-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&th=1",
+    tags: {
+      gender: new Set(["Male"]),
+      age: new Set(["Middle age"]),
+    },
+  },
+  candle: {
+    title: "Candle",
+    url: "https://www.bathandbodyworks.com/p/champagne-toast-3-wick-candle-028013557?srsltid=AfmBOooUF7o4GvzsB2m6OOh8Ef-K5pgRb6S08V575lpxtXgIRRwLpKwVSUQ",
+    tags: {
+      gender: new Set(["Nonbinary"]),
+      age: new Set(["Teenagers", "Young Adults", "Middle age"]),
+    },
+  },
+  perfume_set: {
+    title: "Perfume set",
+    url: "https://www.sephora.com/product/yves-saint-laurent-libre-collection-mini-perfume-duo-set-P513277?country_switch=us&lang=en&skuId=2801603&srsltid=AfmBOopBwcsf-1CZwiOxLETChman6TPArAOQh0XSh2Yv8aWaw13clPVjyxs",
+    tags: {
+      gender: new Set(["Female"]),
+      age: new Set(["Middle age"]),
+    },
+  },
+};
+
+const ads4 = {
+  internship_platform: {
+    title: "Top Internships for Students",
+    url: "https://www.linkedin.com/jobs/internship-jobs",
+    tags: {
+      occupation: new Set(["Student"]),
+      age: new Set(["Teenagers", "Young Adults"]),
+    },
+  },
+
+  office_loafers: {
+    title: "Professional Work Loafers",
+    url: "https://www.dsw.com/",
+    tags: {
+      occupation: new Set(["Employed"]),
+      gender: new Set(["Female", "Male"]),
+      age: new Set(["Young Adults", "Middle age"]),
+    },
+  },
+
+  meal_kit: {
+    title: "Quick Dinner Meal Kit",
+    url: "https://www.hellofresh.com/",
+    tags: {
+      occupation: new Set(["Employed"]),
+      age: new Set(["Young Adults", "Middle age"]),
+    },
+  },
+
+  invoicing_software: {
+    title: "Simple Invoicing for Freelancers",
+    url: "https://www.freshbooks.com/",
+    tags: {
+      occupation: new Set(["Self-Employed"]),
+    },
+  },
+
+  personal_branding_course: {
+    title: "Build Your Personal Brand",
+    url: "https://www.udemy.com/",
+    tags: {
+      occupation: new Set(["Self-Employed"]),
+      age: new Set(["Young Adults", "Middle age"]),
+    },
+  },
+
+  resume_builder: {
+    title: "Resume Builder",
+    url: "https://www.canva.com/resumes/",
+    tags: {
+      occupation: new Set(["Unemployed"]),
+    },
+  },
+
+  job_board: {
+    title: "Jobs Hiring Near You",
+    url: "https://www.indeed.com/",
+    tags: {
+      occupation: new Set(["Unemployed"]),
+    },
+  },
+
+  stress_relief_plush: {
+    title: "Weighted Stress Relief Plush",
+    url: "https://www.amazon.com/",
+    tags: {
+      occupation: new Set(["Student", "Unemployed"]),
+      age: new Set(["Teenagers", "Young Adults"]),
+    },
+  },
+
+  productivity_app: {
+    title: "Organize Your Entire Life",
+    url: "https://www.notion.so/",
+    tags: {
+      occupation: new Set(["Student", "Employed", "Self-Employed"]),
+    },
+  },
+};
