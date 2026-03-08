@@ -19,14 +19,14 @@ img{
 }
 
 /* break point for tablet */
-@media (max-width: 768px){
+@media (max-width: 2000px){
     #grid-box{
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
 /* break point 4 phone */
-@media (max-width: 480px){
+@media (max-width: 1000px){
     #grid-box{
         grid-template-columns: repeat(3, 1fr);
     }
@@ -48,11 +48,8 @@ img{
     width: auto;
 }
 
-.hidden{
-    display: none;
-}
 
-#big-grid-overlay{
+#parent-question{
     display: grid;
     height: 100%;
     width: 100%;
@@ -60,4 +57,7 @@ img{
     gap: 20px;
     align-items: center;
     justify-items: center;
+}
+.hidden{
+    display: none !important;
 }
