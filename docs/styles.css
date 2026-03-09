@@ -19,7 +19,7 @@ img{
 }
 
 /* break point for tablet */
-@media (max-width: 2000px){
+@media (max-width: 1500px){
     #grid-box{
         grid-template-columns: repeat(4, 1fr);
     }
@@ -50,7 +50,7 @@ img{
 
 #ad3{
     position: fixed;
-    height: 10vh;
+    height: 15vh;
     background-color: red;
     top: 20px;
     left: 10vw;
@@ -59,7 +59,7 @@ img{
 
 #ad4{
     position: fixed;
-    width: 10vw;
+    width: 20vw;
     height: 40vh;
     right: 0;
     bottom: 20vh;
@@ -136,12 +136,22 @@ img{
 
 .horizontalAd {
     width: 100%;
-    height: 10vh;
+    height: 20vh;
     object-fit: cover;
+    animation: panAdUpDown 6s ease-in-out infinite alternate;
 }
 
-#horizontalText {
-    height: 100%;
+@keyframes panAdUpDown {
+    from {
+        transform: translateY(-20%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+.horizontalText {
+    height: 15vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -160,7 +170,7 @@ img{
 .verticalBox {
     overflow: hidden;
     display: grid;
-    grid-template-rows: 3fr 3fr;
+    grid-template-rows: 2fr 3fr;
     gap: 20px;
     height: 100%;
 }
@@ -169,6 +179,16 @@ img{
     width: 100%;
     height: 100%;
     object-fit: cover;
+    animation: panAdLeftRight 6s ease-in-out infinite alternate;
+}
+
+@keyframes panAdLeftRight {
+    from {
+        transform: translateX(5%);
+    }
+    to {
+        transform: translateX(-5%);
+    }
 }
 
 #verticalText {

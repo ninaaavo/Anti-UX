@@ -310,7 +310,7 @@ const ads3 = {
     },
     img: "adImgs/gundam.png",
     text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
+    action: "Buy NOW!",
   },
   tool_kit: {
     title: "Home repair tool kit",
@@ -321,7 +321,7 @@ const ads3 = {
     },
     img: "adImgs/toolKit.png",
     text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
+    action: "Buy NOW!",
   },
   candle: {
     title: "Candle",
@@ -332,7 +332,7 @@ const ads3 = {
     },
     img: "https://play-lh.googleusercontent.com/lETycvOJNvuKtnUHVZHSKvUj6IUx62hlUdpAlgaun1sKwU2fa3hzkVNJsiB4BoKeqIM=w416-h235-rw",
     text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
+    action: "Buy NOW!",
   },
   perfume_set: {
     title: "Libre Collection Mini Perfume Duo Set",
@@ -343,7 +343,7 @@ const ads3 = {
     },
     img: "https://content.stylitics.com/images/items/20717653",
     text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
+    action: "Buy NOW!",
   },
 };
 
@@ -356,8 +356,8 @@ const ads4 = {
       age: new Set(["Teenagers", "Young Adults"]),
     },
     img: "https://images.ctfassets.net/4mpdf15r5lc4/6cPZFBdmRr60cE4TyOvHzG/9ba22841abf02b89eb3477b1f606f304/article-image-640x360_linkedin.webp?w=1280&h=720",
-    text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
+    text: "Your network is your net worth. Find internship with Linkedin!",
+    action: "Visit Us",
   },
 
   office_loafers: {
@@ -368,9 +368,9 @@ const ads4 = {
       gender: new Set(["Female"]),
       age: new Set(["Young Adults", "Middle age"]),
     },
-    img: "https://images.ctfassets.net/4mpdf15r5lc4/6cPZFBdmRr60cE4TyOvHzG/9ba22841abf02b89eb3477b1f606f304/article-image-640x360_linkedin.webp?w=1280&h=720",
-    text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
+    img: "https://assets.designerbrands.com/match/Site_Name/560297_413_ss_04/?quality=85&io=transform:fit,width:1280",
+    text: "Redefine sophisticated with the Westlynn Bella loafer from Clarks.",
+    action: "Buy NOW!",
   },
 
   meal_kit: {
@@ -380,45 +380,34 @@ const ads4 = {
       occupation: new Set(["Employed"]),
       age: new Set(["Young Adults", "Middle age"]),
     },
-    img: "https://images.ctfassets.net/4mpdf15r5lc4/6cPZFBdmRr60cE4TyOvHzG/9ba22841abf02b89eb3477b1f606f304/article-image-640x360_linkedin.webp?w=1280&h=720",
-    text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
+    img: "https://www.giftcardexchange.com.au/138-medium_default/xhellofresh-gift-card.jpg.pagespeed.ic.C4A3yAzeo5.jpg",
+    text: "Whatever your week looks like, dinner’s covered.",
+    action: "See Pricing & Plans",
   },
 
   invoicing_software: {
-    title: "Simple Invoicing for Freelancers",
+    title: "",
     url: "https://www.freshbooks.com/",
     tags: {
       occupation: new Set(["Self-Employed"]),
       age: new Set(["Young Adults", "Middle age"]),
       gender: new Set(["Female", "Male", "Nonbinary"]),
     },
-    img: "https://images.ctfassets.net/4mpdf15r5lc4/6cPZFBdmRr60cE4TyOvHzG/9ba22841abf02b89eb3477b1f606f304/article-image-640x360_linkedin.webp?w=1280&h=720",
-    text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
+    img: "https://images.squarespace-cdn.com/content/v1/658304bceabeda35f23becd0/1739591870493-UT3B8QOY4YGNIJSBTGX7/Untitled_design__18_-removebg-preview.png",
+    text: "Simple Invoicing for Freelancers",
+    action: "Visit Us!",
   },
 
   personal_branding_course: {
     title: "Build Your Personal Brand",
-    url: "https://www.udemy.com/",
+    url: "hhttps://www.coursera.org/courses?query=personal%20branding",
     tags: {
       occupation: new Set(["Self-Employed"]),
       age: new Set(["Young Adults", "Middle age"]),
     },
-    img: "https://images.ctfassets.net/4mpdf15r5lc4/6cPZFBdmRr60cE4TyOvHzG/9ba22841abf02b89eb3477b1f606f304/article-image-640x360_linkedin.webp?w=1280&h=720",
-    text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
-  },
-
-  resume_builder: {
-    title: "Resume Builder",
-    url: "https://www.canva.com/resumes/",
-    tags: {
-      occupation: new Set(["Unemployed"]),
-    },
-    img: "https://images.ctfassets.net/4mpdf15r5lc4/6cPZFBdmRr60cE4TyOvHzG/9ba22841abf02b89eb3477b1f606f304/article-image-640x360_linkedin.webp?w=1280&h=720",
-    text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
+    img: "https://theinterngroup.com/hubfs/Imported_Blog_Media/aziz-acharki-U3C79SeHa7k-unsplash.jpg",
+    text: "Stand out and Succeed!",
+    action: "Join us!",
   },
 
   job_board: {
@@ -427,51 +416,35 @@ const ads4 = {
     tags: {
       occupation: new Set(["Unemployed"]),
     },
-    img: "https://images.ctfassets.net/4mpdf15r5lc4/6cPZFBdmRr60cE4TyOvHzG/9ba22841abf02b89eb3477b1f606f304/article-image-640x360_linkedin.webp?w=1280&h=720",
-    text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
-  },
-
-  stress_relief_plush: {
-    title: "Weighted Stress Relief Plush",
-    url: "https://www.amazon.com/",
-    tags: {
-      occupation: new Set(["Student", "Unemployed"]),
-      age: new Set(["Teenagers", "Young Adults"]),
-    },
-    img: "https://images.ctfassets.net/4mpdf15r5lc4/6cPZFBdmRr60cE4TyOvHzG/9ba22841abf02b89eb3477b1f606f304/article-image-640x360_linkedin.webp?w=1280&h=720",
-    text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
-  },
-
-  productivity_app: {
-    title: "Organize Your Entire Life",
-    url: "https://www.notion.so/",
-    tags: {
-      occupation: new Set(["Student", "Employed", "Self-Employed"]),
-    },
-    img: "https://images.ctfassets.net/4mpdf15r5lc4/6cPZFBdmRr60cE4TyOvHzG/9ba22841abf02b89eb3477b1f606f304/article-image-640x360_linkedin.webp?w=1280&h=720",
-    text: "Mech Fans: Your Next Build Just Dropped!",
-    action:"Buy NOW!"
+    img: "https://careers.aan.com/themes/aan1/images/img4.png?1753318581",
+    text: "Find your dream job!",
+    action: "Search now!",
   },
 };
 
 const ads5 = {
-  mechanical_keyboard: {
-    title: "Mechanical Gaming Keyboard",
-    url: "https://www.amazon.com/dp/B08gamingkeyboard",
+  mechanical_keyboard_male: {
+    title: "ARTEMIS K719 PRO Anime Keyboard",
+    url: "https://redragonshop.com/products/artemis-k719-pro-anime-keyboard",
     tags: {
       interest: new Set(["Gaming"]),
+      gender: new Set(["Male", "Nonbinary"]),
     },
+    img: "https://redragonshop.com/cdn/shop/files/RedragonARTEMISK719PROAnimeKeyboard_1.png?v=1762467820&width=713",
+    text: "Reliable ally of Redragon, personalized waifu character Ignara reporting!",
+    action: "Buy NOW!",
   },
 
-  gamer_chair: {
-    title: "Ergonomic Gaming Chair",
-    url: "https://www.amazon.com/dp/B08gamerchair",
+  mechanical_keyboard_female: {
+    title: "Akko x Yier and Bubu Limited Edition Keyboard",
+    url: "https://en.akkogear.com/product/yier-and-bubu-3108v3-mechanical-keyboard/",
     tags: {
       interest: new Set(["Gaming"]),
-      age: new Set(["Young Adults", "Teenager"]),
+      gender: new Set(["Female"]),
     },
+    img: "https://en.akkogear.com/wp-content/uploads/2025/12/Yier-and-Bubu-3108v3-P.png",
+    text: "Inspired by the beloved characters, also known globally as Bubu and Dudu.",
+    action: "Buy NOW!",
   },
 
   trench_coat: {
@@ -482,6 +455,9 @@ const ads5 = {
       age: new Set(["Middle age"]),
       gender: new Set(["Female", "Nonbinary"]),
     },
+    img: "adImgs/trenchCoat.png",
+    text: "Effortless elegance for any weather.",
+    action: "Buy NOW!",
   },
 
   men_trench_coat: {
@@ -492,6 +468,9 @@ const ads5 = {
       age: new Set(["Middle age"]),
       gender: new Set(["Male", "Nonbinary"]),
     },
+    img: "adImgs/maleTrenchCoat.png",
+    text: "Sharp, timeless, and built for the modern man, this trench coat adds effortless confidence to every step you take.",
+    action: "Buy NOW!",
   },
 
   sneaker: {
@@ -502,6 +481,9 @@ const ads5 = {
       age: new Set(["Young Adults", "Teenager"]),
       gender: new Set(["Male", "Nonbinary"]),
     },
+    img: "https://dks.scene7.com/is/image/GolfGalaxy/23MAZMCLDTLTWHTBLMNS_Black_Ivory?wid=2000&hei=2000&fit=constrain&fmt=pjpeg",
+    text: "The On Men's Cloudtilt Shoes offer unparalleled comfort for your walking and casual needs.",
+    action: "Buy NOW!",
   },
 
   designer_bag: {
@@ -512,16 +494,21 @@ const ads5 = {
       age: new Set(["Young Adults", "Middle age"]),
       gender: new Set(["Female"]),
     },
+    img: "https://coach.scene7.com/is/image/Coach/can90_b4bk_a0?$desktopProduct$",
+    text: "Turn heads wherever you go: Brook Flap Chain Bag blends sleek luxury with just the right touch of bold elegance.",
+    action: "Buy NOW!",
   },
 
   protein_powder: {
-    title: "Whey Protein Powder",
+    title: "Nutrex 100% Whey Protein Powder",
     url: "https://www.amazon.com/dp/B08protein",
     tags: {
       interest: new Set(["Fitness"]),
-      age: new Set(["Young Adults", "Middle age"]),
-      occupation: new Set(["Student", "Employed", "Self-Employed"]),
+      gender: new Set(["Nonbinary", "Male"]),
     },
+    img: "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ_fxETmX1FdmMAYmXBQjOvYTlUByxNZuKY3fwwBh13C0yyGYziWQBN5jpqSMi8xy1g3mepeCU4EtDs3syAxnB4KIq6DGoX0wNryR0BLBnW",
+    text: "Pure muscle-building fuel and perfect for your muscle-building goals.",
+    action: "Buy NOW!",
   },
 
   yoga_mat: {
@@ -529,9 +516,12 @@ const ads5 = {
     url: "https://www.amazon.com/dp/B08yogamat",
     tags: {
       interest: new Set(["Fitness"]),
-      gender: new Set(["Female", "Nonbinary", "Male"]),
+      gender: new Set(["Female"]),
       age: new Set(["Teenagers", "Young Adults", "Middle age"]),
     },
+    img: "https://target.scene7.com/is/image/Target/GUEST_464b976c-e4fe-4021-89f7-9daa8f733b30?wid=1200&hei=1200&qlt=80",
+    text: "Your future flexible self will thank you: this non-slip yoga mat is ready whenever you finally decide to show up.",
+    action: "Buy NOW!",
   },
 
   investing_app: {
@@ -542,90 +532,130 @@ const ads5 = {
       age: new Set(["Young Adults", "Middle age"]),
       occupation: new Set(["Student", "Employed", "Self-Employed"]),
     },
+    img: "https://sqy7rm.media.zestyio.com/Hp-Updates-Body-01.avif",
+    text: "An automated saving and investing app for you and your family",
+    action: "Get started",
   },
 
-  trading_book: {
-    title: "Stock Market Guide for Beginners",
-    url: "https://www.amazon.com/dp/B08stockbook",
-    tags: {
-      interest: new Set(["Finance"]),
-      age: new Set(["Young Adults", "Middle age"]),
-      occupation: new Set(["Student", "Unemployed", "Employed"]),
-    },
-  },
-
-  sketchbook_set: {
-    title: "Professional Sketchbook Set",
-    url: "https://www.amazon.com/dp/B08sketchbook",
+  color_markers: {
+    title:
+      "Ohuhu Honolulu 320 Colors Dual Tips Alcohol Art Markers (New Version)",
+    url: "https://ohuhu.com/products/ohuhu-honolulu-320-colors-dual-tips-alcohol-art-markers?gad_source=1&gad_campaignid=20549422248&gbraid=0AAAAACPJ4XuqOGYcped_283O91d5WQEdu&gclid=Cj0KCQjw37nNBhDkARIsAEBGI8MLlIIkZAOcF72Z_P5zhUNtUANZbZSeypKvyYYZNmXtEKh_9i6Yei0aAuaZEALw_wcB",
     tags: {
       interest: new Set(["Art/Creativity"]),
-      age: new Set(["Teenagers", "Young Adults"]),
-      occupation: new Set(["Student", "Self-Employed"]),
     },
-  },
-
-  ipad_drawing_pen: {
-    title: "Digital Drawing Stylus",
-    url: "https://www.amazon.com/dp/B08stylus",
-    tags: {
-      interest: new Set(["Art/Creativity"]),
-      age: new Set(["Young Adults", "Middle age"]),
-      occupation: new Set(["Student", "Self-Employed", "Employed"]),
-    },
-  },
-
-  carry_on: {
-    title: "Lightweight Carry-On Suitcase",
-    url: "https://www.amazon.com/dp/B08carryon",
-    tags: {
-      interest: new Set(["Travel"]),
-      age: new Set(["Young Adults", "Middle age"]),
-      occupation: new Set(["Employed", "Self-Employed"]),
-    },
+    img: "https://ohuhu.com/cdn/shop/files/Honolulu_320_Basic_V2-10.jpg?v=1754489183&width=1080",
+    text: "Explore the artistry of Ohuhu Markers, the preferred choice for alcohol-based markers.",
+    action: "Buy NOW!",
   },
 
   flight_deals: {
-    title: "Cheap Flights This Month",
+    title: "Flight Deals with Expedia",
     url: "https://www.skyscanner.com/",
     tags: {
       interest: new Set(["Travel"]),
-      age: new Set(["Young Adults", "Middle age"]),
-      occupation: new Set([
-        "Student",
-        "Employed",
-        "Self-Employed",
-        "Unemployed",
-      ]),
     },
+    img: "https://img.freepik.com/free-photo/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand_335224-849.jpg?semt=ais_rp_50_assets&w=740&q=80",
+    text: "Compare cheap airline ticket prices at a glance from a large inventory of carriers on Expedia. You can get cheap flights by staying flexible with travel dates.",
+    action: "Buy NOW!",
   },
 };
 
 const ads7 = {
   cheap_mobile_game: {
-    title: "Free Mobile Game",
-    url: "https://play.google.com/store",
+    title: "Free To Play Marvel Rivals",
+    url: "https://www.marvelrivals.com/",
     tags: {
       budget: new Set(["Almost nothing"]),
       interest: new Set(["Gaming"]),
     },
+    img: "https://shared.akamai.steamstatic.com//store_item_assets/steam/apps/2767030/9d7954ac82070ed306b791a65da2c93827c57204/capsule_616x353.jpg?t=1770976548",
+    text: " Super Hero Team-based PVP Shooter in the Marvel Universe with all heroes FREE TO PLAY",
+    action: "Play NOW!",
   },
 
   thrift_clothing: {
     title: "Thrifted Fashion Finds",
     url: "https://www.depop.com/",
     tags: {
-      budget: new Set(["Almost nothing"]),
+      budget: new Set(["Almost nothing", "Up to $50"]),
       interest: new Set(["Fashion"]),
     },
+    img: "https://bump.bot/images/depop.jpg",
+    text: "Buy for less. Pay no selling fee*. Keep fashion circular.",
+    action: "Explore more",
+  },
+
+  free_workout_app: {
+    title: "Free Guided Workouts with Nike Training Club",
+    url: "https://www.nike.com/ntc-app",
+    tags: {
+      budget: new Set(["Almost nothing"]),
+      interest: new Set(["Fitness"]),
+    },
+    img: "https://static.digit.in/default/d4e0dd2d70b4524f85297fc0c768f6f0dbb41227.jpeg",
+    text: "The Nike Training Club app will make your fitness habits stick with quicker options, goal-setting tools, and new content daily. ",
+    action: "Start Training",
+  },
+
+  budget_tracker: {
+    title: "MINT Free Budget Tracker",
+    url: "https://mint.intuit.com/",
+    tags: {
+      budget: new Set(["Almost nothing", "Up to $50"]),
+      interest: new Set(["Finance"]),
+    },
+    img: "https://i.pcmag.com/imagery/reviews/05OMSsUmroXJ6F6sETKpH9R-43.fit_lim.size_1200x630.v1630353377.jpg",
+    text: "Track spending, set budgets, and understand your money for FREE.",
+    action: "Start Budgeting",
+  },
+
+  coloring_app: {
+    title: "Happy Mobile Coloring Book",
+    url: "https://www.lakecoloring.com/",
+    tags: {
+      budget: new Set(["Almost nothing"]),
+      interest: new Set(["Art/Creativity"]),
+    },
+    img: "https://d1nl7v5tzifdth.cloudfront.net/fojnsgj5hqagns0bpzxpei2s.webp",
+    text: "Welcome to Lake: a coloring app with the largest collection of coloring books by independent illustrators. ",
+    action: "Color Now",
+  },
+
+  trip_planner: {
+    title: "Plan Your Dream Trip with Wanderlog",
+    url: "https://wanderlog.com/",
+    tags: {
+      budget: new Set(["Almost nothing"]),
+      interest: new Set(["Travel"]),
+    },
+    img: "https://www.winklix.com/blog/wp-content/uploads/2025/04/wanderlog.jpg.webp",
+    text: "Build itineraries, track bookings, and plan trips with friends.",
+    action: "Plan a Trip",
   },
 
   resistance_bands: {
     title: "Resistance Bands Workout Set",
-    url: "https://www.amazon.com/dp/B08bands",
+    url: "https://www.dickssportinggoods.com/p/ethos-super-band-17au6usprbndxhvyxeac/17au6usprbndxhvyxeac?recid=PageElement:product2_rr_v1e8mm3:80504:&sku=17412528&recToken=rt.2.WyJwcm9kdWN0IiwgNTgzMjM3NywgbnVsbCwgIjE3NDEyNTI4IiwgIjE3QVU2VVNQUkJORFhIVllYRUFDIiwgODA1MDQsIDIsICIyMDI2LTAzLTA5VDE4OjM4OjExLjI1MzcyNFoiXQ",
     tags: {
       budget: new Set(["Up to $50"]),
       interest: new Set(["Fitness"]),
     },
+    img: "https://dks.scene7.com/is/image/GolfGalaxy/ETHA203_NOCOLOR_REG-alt3?wid=2000&hei=2000&fit=constrain&fmt=pjpeg",
+    text: "Add resistance to a wide variety of upper and lower body exercises with the ETHOS® Super Band, designed with a durable, compact construction that provides maximum toning results with minimal equipment.",
+    action: "Buy NOW!",
+  },
+
+  steam:{
+    title: "Mewgenics!",
+    url: "https://store.steampowered.com/app/686060/Mewgenics/",
+    tags: {
+      budget: new Set(["Up to $50"]),
+      interest: new Set(["Gaming"]),
+    },
+    img: "https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/686060/aa8075d11165fef4d4d0d09c156f0da0623b5da1/header.jpg?t=1771573546",
+    text: "Build the ultimate cat army through tactical breeding and send them into deep, challenging turn-based adventures.",
+    action: "Play on Steam",
   },
 
   travel_daypack: {
@@ -635,42 +665,93 @@ const ads7 = {
       budget: new Set(["Up to $50"]),
       interest: new Set(["Travel"]),
     },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
-  drawing_marker_set: {
-    title: "Professional Marker Set",
-    url: "https://www.amazon.com/dp/B08markers",
+  coloring_book: {
+    title: "Fuzzy Hygge: Cute and Cozy Coloring Book",
+    url: "https://www.lakecoloring.com/",
+    tags: {
+      budget: new Set(["Up to $50"]),
+      interest: new Set(["Art/Creativity"]),
+    },
+    img: "https://prodimage.images-bn.com/pimages/9798217036523_p0_v1_s600x595.jpg",
+    text: "Savor the little joys and cozy moments of the hygge lifestyle with Fuzzy Hygge - an irresistible coloring book that will make your heart melt into a puddle of gooey cuteness.",
+    action: "Color Now",
+  },
+
+  watercolor: {
+    title: "All-In-One Premium Watercolor Set",
+    url: "https://grabieart.com/products/100-solid-watercolor-paint-set-with-40-metallic-color?currency=USD&variant=50160627253529&utm_source=google&utm_medium=cpc&utm_campaign=Google%20Shopping&stkn=aa0886fea784&utm_source=google&dm_cam=23554532320&dm_grp=&dm_ad=&dm_kw=&dm_net=adwords&att_gcid=Cj0KCQjw37nNBhDkARIsAEBGI8N1PRX9eptJtyLhHRL2fM7eHba42vzeu_KzxE8LisNqVLcqvm9_ShwaAgMaEALw_wcB&att_gbid=0AAAAABKmrNVHVoIQm59_V_8t438hD32mi&att_wbid=CkAKCAiA2bTNBhB9EjAAk6yxL74abVppLwWqQDTwT8c5BGlTw1P1BDSBJLBFWoOjKm8aOhAuvGgwgyX-RxMaAiLh&gad_source=1&gad_campaignid=23549896550&gbraid=0AAAAABKmrNVHVoIQm59_V_8t438hD32mi&gclid=Cj0KCQjw37nNBhDkARIsAEBGI8N1PRX9eptJtyLhHRL2fM7eHba42vzeu_KzxE8LisNqVLcqvm9_ShwaAgMaEALw_wcB",
     tags: {
       budget: new Set(["Up to $100"]),
       interest: new Set(["Art/Creativity"]),
     },
+    img: "adImgs/watercolor.png",
+    text: "Elevate your artistry with our three distinct watercolor sets, available in 50, 100, or 168 stunning colors. ",
+    action: "Buy NOW!",
   },
 
-  streetwear_sneakers: {
-    title: "Limited Edition Sneakers",
-    url: "https://stockx.com/",
+  game_chair:{
+    title: "SOONTRANS Massage Gaming Chair Office Chair with Footrest",
+    url: "https://www.walmart.com/ip/Ferghana-Massage-Gaming-Chair-Office-Chair-Ergonomic-Game-Chair-Hight-Back-with-Lumbar-Pillow-and-Footrest-Gamer-Chairs-for-Adults-Kids-Blue/1299924365",
     tags: {
       budget: new Set(["Up to $100"]),
-      interest: new Set(["Fashion"]),
+      interest: new Set(["Gaming"]),
     },
+    img: "adImgs/gameChair.png",
+    text: "designed in racing style that born to offer you a combination of luxurious comfort and visual enjoyment",
+    action: "Buy NOW!",
   },
 
-  adjustable_dumbbells: {
-    title: "Adjustable Dumbbell Set",
-    url: "https://www.amazon.com/dp/B08dumbbells",
-    tags: {
-      budget: new Set(["Up to $500"]),
-      interest: new Set(["Fitness"]),
-    },
+  investing_book: {
+  title: "Start Investing for Less Than $100",
+  url: "https://www.amazon.com/s?k=investing+books",
+  tags: {
+    budget: new Set(["Under $100"]),
+    interest: new Set(["Finance"]),
   },
+  img: "adImgs/investingBook.png",
+  text: "Learn how to grow your money with beginner investing guides.",
+  action: "Learn More",
+},
+
+  headphones: {
+    title: "Baseus Inspire XH1 Adaptive Active Noise Cancelling Headphones",
+    url: "https://www.amazon.com/dp/B0FLPY5H72?tag=cnet-buy-button-20&ascsubtag=eb7bc43c7a894fa4bdf8804e77f61682&geniuslink=true&th=1",
+    tags: {
+      budget: new Set(["Up to $100"]),
+      interest: new Set(["Fashion","Fitness", "Travel"]),
+    },
+    img: "adImgs/headphones.png",
+    text: "Enjoy an exceptional audio experience with Baseus’s finest headphones yet",
+    action: "Buy NOW!",
+  },
+
+  smart_home_gym: {
+  title: "Build Your Home Gym Under $500",
+  url: "https://www.roguefitness.com/",
+  tags: {
+    budget: new Set(["Up to $500"]),
+    interest: new Set(["Fitness"]),
+  },
+  img: "adImgs/rogue.png",
+  text: "Upgrade your workouts with adjustable dumbbells and compact gym gear.",
+  action: "Start Training",
+},
 
   gaming_console: {
-    title: "Next-Gen Gaming Console",
+    title: "Nintendo Switch 2 System",
     url: "https://www.bestbuy.com/",
     tags: {
       budget: new Set(["Up to $500"]),
       interest: new Set(["Gaming"]),
     },
+    img: "https://d37tikmwcb2tc.cloudfront.net/gaming/image/Nintendo_Switch2_123669_6.jpg",
+    text: "Unlock the gaming world with Nintendo Switch 2 System",
+    action: "Buy NOW!",
   },
 
   luxury_watch: {
@@ -680,6 +761,9 @@ const ads7 = {
       budget: new Set(["Whatever it costs"]),
       interest: new Set(["Fashion", "Finance"]),
     },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   luxury_resort: {
@@ -689,6 +773,9 @@ const ads7 = {
       budget: new Set(["Whatever it costs"]),
       interest: new Set(["Travel"]),
     },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 };
 
@@ -699,14 +786,9 @@ const ads8 = {
     tags: {
       buyingHabit: new Set(["I look for the cheapest option."]),
     },
-  },
-
-  discount_marketplace: {
-    title: "Daily Bargain Marketplace",
-    url: "https://www.temu.com/",
-    tags: {
-      buyingHabit: new Set(["I look for the cheapest option."]),
-    },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   coupon_browser_extension: {
@@ -715,23 +797,9 @@ const ads8 = {
     tags: {
       buyingHabit: new Set(["I wait for sales or discounts"]),
     },
-  },
-
-  black_friday_alerts: {
-    title: "Track the Best Sales Automatically",
-    url: "https://slickdeals.net/",
-    tags: {
-      buyingHabit: new Set(["I wait for sales or discounts"]),
-    },
-  },
-
-  luxury_sneakers: {
-    title: "Limited Edition Sneaker Drop",
-    url: "https://stockx.com/",
-    tags: {
-      buyingHabit: new Set(["I buy things that make people jealous of me."]),
-      interest: new Set(["Fashion"]),
-    },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   luxury_sports_car: {
@@ -740,14 +808,9 @@ const ads8 = {
     tags: {
       buyingHabit: new Set(["I buy things that make people jealous of me."]),
     },
-  },
-
-  one_click_checkout: {
-    title: "Buy It Now — One Click Checkout",
-    url: "https://www.amazon.com/",
-    tags: {
-      buyingHabit: new Set(["If I want it, I buy it immediately"]),
-    },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   same_day_delivery: {
@@ -756,16 +819,9 @@ const ads8 = {
     tags: {
       buyingHabit: new Set(["If I want it, I buy it immediately"]),
     },
-  },
-
-  product_review_site: {
-    title: "Compare 10,000+ Product Reviews",
-    url: "https://www.consumerreports.org/",
-    tags: {
-      buyingHabit: new Set([
-        " I usually think about it for a while before buying.",
-      ]),
-    },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   price_tracking_tool: {
@@ -776,37 +832,13 @@ const ads8 = {
         " I usually think about it for a while before buying.",
       ]),
     },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 };
 
 const ads9 = {
-  new_phone_preorder: {
-    title: "Preorder the Newest Smartphone",
-    url: "https://www.apple.com/iphone/",
-    tags: {
-      upgradeHabit: new Set(["Upgrade immediately"]),
-      interest: new Set(["Gaming", "Fashion", "Travel"]),
-    },
-  },
-
-  latest_gaming_gpu: {
-    title: "Next-Gen Gaming GPU Just Released",
-    url: "https://www.nvidia.com/en-us/geforce/",
-    tags: {
-      upgradeHabit: new Set(["Upgrade immediately"]),
-      interest: new Set(["Gaming"]),
-    },
-  },
-
-  smartwatch_upgrade: {
-    title: "Upgrade to the Latest Smartwatch",
-    url: "https://www.apple.com/watch/",
-    tags: {
-      upgradeHabit: new Set(["Upgrade Eventually"]),
-      interest: new Set(["Fitness", "Fashion"]),
-    },
-  },
-
   laptop_tradein: {
     title: "Trade In Your Old Laptop for Credit",
     url: "https://www.bestbuy.com/site/services/trade-in",
@@ -814,14 +846,9 @@ const ads9 = {
       upgradeHabit: new Set(["Upgrade Eventually"]),
       interest: new Set(["Gaming", "Art/Creativity", "Finance"]),
     },
-  },
-
-  device_repair_kit: {
-    title: "DIY Phone Repair Kit",
-    url: "https://www.ifixit.com/",
-    tags: {
-      upgradeHabit: new Set(["Wait until my current one breaks"]),
-    },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   extended_warranty: {
@@ -830,17 +857,9 @@ const ads9 = {
     tags: {
       upgradeHabit: new Set(["Wait until my current one breaks"]),
     },
-  },
-
-  refurbished_electronics: {
-    title: "Certified Refurbished Electronics",
-    url: "https://www.backmarket.com/",
-    tags: {
-      upgradeHabit: new Set([
-        "Upgrade Eventually",
-        "Wait until my current one breaks",
-      ]),
-    },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   subscription_upgrade_program: {
@@ -849,6 +868,9 @@ const ads9 = {
     tags: {
       upgradeHabit: new Set(["Upgrade immediately"]),
     },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 };
 
@@ -860,14 +882,9 @@ const ads10 = {
       worry: new Set(["Not having enough money"]),
       interest: new Set(["Finance"]),
     },
-  },
-
-  side_hustle_course: {
-    title: "Start a Side Hustle Today",
-    url: "https://www.udemy.com/topic/side-hustle/",
-    tags: {
-      worry: new Set(["Not having enough money"]),
-    },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   luxury_watch: {
@@ -877,22 +894,9 @@ const ads10 = {
       worry: new Set(["Falling behind others"]),
       interest: new Set(["Fashion", "Finance"]),
     },
-  },
-
-  productivity_course: {
-    title: "Outperform Everyone Around You",
-    url: "https://www.coursera.org/",
-    tags: {
-      worry: new Set(["Falling behind others"]),
-    },
-  },
-
-  linkedin_premium: {
-    title: "Advance Your Career With LinkedIn Premium",
-    url: "https://www.linkedin.com/premium/",
-    tags: {
-      worry: new Set(["Job or career stability"]),
-    },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   online_certification: {
@@ -901,14 +905,9 @@ const ads10 = {
     tags: {
       worry: new Set(["Job or career stability"]),
     },
-  },
-
-  dating_app: {
-    title: "Meet Someone Special Today",
-    url: "https://tinder.com/",
-    tags: {
-      worry: new Set(["Relationships"]),
-    },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   couples_therapy: {
@@ -917,6 +916,9 @@ const ads10 = {
     tags: {
       worry: new Set(["Relationships"]),
     },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 
   fitness_tracker: {
@@ -926,14 +928,9 @@ const ads10 = {
       worry: new Set(["Health"]),
       interest: new Set(["Fitness"]),
     },
-  },
-
-  health_checkup: {
-    title: "Book a Full Health Screening",
-    url: "https://www.zocdoc.com/",
-    tags: {
-      worry: new Set(["Health"]),
-    },
+    img: "",
+    text: "",
+    action: "Buy NOW!",
   },
 };
 
@@ -951,13 +948,15 @@ function revealAd(ind) {
   adchoice = actualAdsList[curAdsInd][choice];
   console.log("choice is", adchoice);
   console.log("img is", adchoice["img"]);
-  let direction = curAd.classList.contains("horizontal")?"horizontal":"vertical"
+  let direction = curAd.classList.contains("horizontal")
+    ? "horizontal"
+    : "vertical";
   html = `<a href=${adchoice["url"]}>
             <div class="${direction}Box">
               
               <img src=${adchoice["img"]} class="${direction}Ad">
               
-              <div id="${direction}Text">
+              <div class="${direction}Text">
                 <h1> ${adchoice.title} </h1>
                 <h2> ${adchoice.text} </h2>
                 <div class="fakeBnt">${adchoice["action"]}</div>
@@ -998,7 +997,7 @@ function computeAd() {
 
 function clickSubmit() {
   let saveResult = saveResponse();
-  if (!saveResult) {
+  if (!parentQuestion.classList.contains("hidden") && !saveResult) {
     let name = response["name"] ? response["name"] + ", " : "";
     alert(
       `I just want to learn more about you, ${name}as a friend.\nMy secrets aren't free.`,
@@ -1008,7 +1007,7 @@ function clickSubmit() {
   changeLockerDisplay();
   refreshOverlay();
   curQuestion++;
-  console.log("curqest", curQuestion);
+  // console.log("curqest", curQuestion);
 
   if (curAdsInd < adsInds.length - 1 && curQuestion == adsInds[curAdsInd + 1]) {
     curAdsInd++;
