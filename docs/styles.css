@@ -48,6 +48,70 @@ img{
     width: auto;
 }
 
+#ad3{
+    position: fixed;
+    height: 10vh;
+    background-color: red;
+    top: 20px;
+    left: 10vw;
+    width: 80vw;
+}
+
+#ad4{
+    position: fixed;
+    width: 10vw;
+    height: 40vh;
+    right: 0;
+    bottom: 20vh;
+    background-color: aqua;
+}
+
+#ad5{
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 30vh;
+    width: 30vh;
+    background-color: blueviolet;
+}
+
+#ad7{
+    position: fixed;
+    bottom: 20%;
+    left: 0;
+    height: 10vh;
+    width: 70vw;
+    background-color: blueviolet;
+}
+
+#ad8{
+    position: fixed;
+    width: 80vw;
+    height: 10vh;
+    left: 10vw;
+    bottom: 0vh;
+    background-color: pink;
+}
+
+#ad9{
+    position: fixed;
+    width: 10vw;
+    height: 40vh;
+    left: 0;
+    top: 15vh;
+    background-color: aqua;
+}
+
+#ad10{
+    position: fixed;
+    width: 10vw;
+    height: 40vh;
+    right: 15vw;
+    bottom: 40vh;
+    background-color: rgb(92, 76, 117);
+}
+
 
 #parent-question{
     display: grid;
@@ -60,4 +124,60 @@ img{
 }
 .hidden{
     display: none !important;
+}
+
+.horizontalBox {
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 3fr 3fr;
+    gap: 20px;
+    height: 100%;
+}
+
+.horizontalAd {
+    width: 100%;
+    height: 10vh;
+    object-fit: cover;
+}
+
+#horizontalText {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;   
+    text-align: center;
+    text-decoration: none;
+}
+
+.fakeBnt{
+    background-color: aqua;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.verticalBox {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 3fr 3fr;
+    gap: 20px;
+    height: 100%;
+}
+
+.verticalAd {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#verticalText {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;   
+    text-align: center;
+    text-decoration: none;
 }
