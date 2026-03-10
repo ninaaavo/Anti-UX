@@ -1033,6 +1033,7 @@ function revealAd(ind) {
   choice = computedAds[0][1];
   adchoice = actualAdsList[ind][choice];
   console.log("my ad choice for ind", ind, "is", adchoice);
+  
   let direction = curAd.classList.contains("horizontal")
     ? "horizontal"
     : "vertical";
@@ -1044,7 +1045,7 @@ function revealAd(ind) {
               <div class="${direction}Text">
                 <p class="title"> ${adchoice.title} </p>
                 <p class = "text">${adchoice.text} </ps>
-                <div class="fakeBnt">${adchoice["action"]}</div>
+                <div class="fakeBnt shaky">${adchoice["action"]}</div>
               </div>
             </div>
           </a>`;
