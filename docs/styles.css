@@ -31,7 +31,9 @@ img{
         grid-template-columns: repeat(3, 1fr);
     }
 }
-
+a{
+    text-decoration: none;
+}
 #overlay{
     position: fixed;
     top: 50%;
@@ -51,7 +53,7 @@ img{
 #ad3{
     position: fixed;
     height: 15vh;
-    background-color: red;
+    background-color: rgb(205, 24, 24);
     top: 20px;
     left: 10vw;
     width: 80vw;
@@ -80,17 +82,17 @@ img{
     position: fixed;
     bottom: 20%;
     left: 0;
-    height: 10vh;
-    width: 70vw;
+    height: 30vh;
+    width: 50vw;
     background-color: blueviolet;
 }
 
 #ad8{
     position: fixed;
     width: 80vw;
-    height: 10vh;
-    left: 10vw;
-    bottom: 0vh;
+    height: 15vh;
+    left: 20vw;
+    bottom: 5vh;
     background-color: pink;
 }
 
@@ -149,6 +151,18 @@ img{
         transform: translateY(0%);
     }
 }
+.title{
+    font-size: 1.5em;
+    text-decoration: none;
+    margin: 0;
+    color: white;
+}
+.text{
+    font-size: 1em;
+    text-decoration: none;
+    margin: 0;
+    color: white;
+}
 
 .horizontalText {
     height: 15vh;
@@ -158,13 +172,13 @@ img{
     justify-content: center; 
     align-items: center;   
     text-align: center;
-    text-decoration: none;
+
 }
 
 .fakeBnt{
     background-color: aqua;
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
 }
 
 .verticalBox {

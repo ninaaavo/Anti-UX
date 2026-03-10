@@ -1,115 +1,10 @@
-// all secrets
+// ******************* //
 
-const secrets = [
-  `In high school, I stole the mp3 player of a classmate. Went into the locker room during PE and snatched it. I didn't steal it because I wanted it or to sell it, I just did it because she was an awful judgmental queen bee and I wanted to get back at her. People saw me with it in my hands, so the next day I was called into the principal's office. I denied everything and they searched my bag and my room.
+// Declaring const vars //
 
-They never found it. I buried the MP3 player in my garden as soon as I got home, and that garden is now a mega store parking lot. I've never admitted it to anyone.`,
+// ******************* //
 
-  `I'm tired of being an adult and just want someone to take care of me. I'm a single mom and the responsible caretaker person in some capacity for 35 of my 40 years. I have chronic health issues and I'm exhausted. Everyone sees me as dependable and responsible, but I wish I could take a long break where I don't have to worry about bills, decisions, or parenting.
-
-Also, my son gets extremely loud when gaming with his friends and it drives me insane. I feel guilty for getting irritated at him.`,
-
-  `I'm in a 2 year relationship but I still think about my previous partner. Before my current boyfriend I had a thing with a guy who was already in a relationship. I fell madly in love with him, but he eventually broke things off with me out of nowhere. I never got closure.
-
-Now I really love my boyfriend, but I don't think I'll ever love him as much as I loved the other guy. I still see him sometimes and my heart stops.`,
-
-  `In 1991 my business partner committed suicide by driving into a concrete barrier. He left a note on his computer explaining what he planned to do and apologizing for leaving me without a partner. I've never told anyone. Everyone thinks it was an accident.`,
-
-  `My friend hosted a birthday party and I found her passed out in vomit in her room. I rinsed her off in the shower and put her in bed. When I changed her clothes I realized she had soiled herself. I cleaned her up like a baby and put clean clothes on her. It was awkward explaining the next day, but I didn't want her to wake up like that.`,
-
-  `We put the cat to sleep. We didn't find him already dead. He had cancer, feline HIV, and no teeth. He was suffering badly. We lied about it because someone in the family doesn't believe in euthanasia and would have forced him to suffer longer.`,
-
-  `When I was 16 I accidentally ran over my friend's kitten while leaving her party. I felt the bump and knew what happened. I was terrified she'd never forgive me, so I kept driving. She called me crying later that night about it. We're still best friends today and she never knew.`,
-
-  `I haven't wanted to be alive for a long time. Not actively suicidal, but passively. Sometimes the feeling is quiet and sometimes it's loud. The world is beautiful and terrifying at the same time and it's a lot to process.`,
-
-  `I wish I was never born.`,
-
-  `If I feel ugly on a bad day, I can't go outside or interact with people. I feel completely incapable of functioning normally unless I look good.`,
-
-  `I want kids but my partner doesn't. I had an abortion last year and never told him that part of me didn't fully want it. I know admitting that would probably end our 11 year relationship, so I'll carry the grief alone.`,
-
-  `In sixth grade I lied about being pregnant because nobody paid attention to me and I wanted someone to care.`,
-];
-
-// setting up imgs html
-
-const imgs = new Array(12).fill("single_locker.jpg");
-
-let imgsHTML = "";
-let emptyImg = "empty.png";
-
-imgs.forEach((img, ind) => {
-  imgsHTML += `<img src="${img}" class="locker" id="lock${ind}" />`;
-});
-const gridBox = document.getElementById("grid-box");
-gridBox.innerHTML = imgsHTML;
-
-// Define vars
-const lockers = Array.from(document.getElementsByClassName("locker"));
-const lockerCount = lockers.length;
-const overlay = document.getElementById("overlay");
-const zoomedLocker = document.getElementById("zoomedLocker");
-const secret = document.getElementById("secret");
-const parentQuestion = document.getElementById("parent-question");
-
-let unopenedLockers = new Set();
-currentLockerID = -1;
-for (let i = 0; i < lockerCount; i++) unopenedLockers.add(i);
-console.log("unopen", unopenedLockers);
-
-function refreshOverlay() {
-  locker = lockers[currentLockerID];
-  if (unopenedLockers.has(currentLockerID)) {
-    // if the user hasnt opened this locker
-    console.log("yu");
-    zoomedLocker.src = locker.src;
-    parentQuestion.classList.remove("hidden");
-    secret.classList.add("hidden");
-    displayQuestion();
-  } else {
-    // if the user opened this locker
-    let textData = secrets[currentLockerID];
-    console.log("parent question", parentQuestion);
-    secret.classList.remove("hidden");
-    parentQuestion.classList.add("hidden");
-    secret.innerHTML = `<h1>${textData}</h1>`;
-  }
-}
-// When click on a locker, show the overlay
-lockers.forEach((locker, ind) => {
-  locker.addEventListener("click", (event) => {
-    if (overlay.classList.contains("hidden")) {
-      event.stopPropagation();
-      currentLockerID = ind;
-      overlay.classList.remove("hidden");
-      // console.log("clicked", currentLockerID);
-      // console.log("ounopended", unopenedLockers);
-
-      refreshOverlay();
-    }
-  });
-});
-
-function hideOverlay() {
-  overlay.classList.add("hidden");
-  curLocker = -1;
-}
-
-// when click outside of overlay, exit
-document.addEventListener("click", (event) => {
-  if (
-    !overlay.contains(event.target) &&
-    !overlay.classList.contains("hidden")
-  ) {
-    hideOverlay();
-  }
-});
-
-// now do the questions
-
-let curQuestion = 0;
-
+// question db 
 const questions = [
   { id: "name", type: "text", prompt: "How should I call you?" },
   { id: "birthday", type: "date", prompt: "what is your birthday?" },
@@ -216,89 +111,7 @@ const questions = [
   },
 ];
 
-let response = {};
-
-function displayQuestion() {
-  const q = questions[curQuestion];
-  const area = document.getElementById("question-area");
-  // console.log("area is", area);
-  let prompt = response["name"] ? response["name"] + ", " + q.prompt : q.prompt;
-  let html = `<p>${prompt}</p>`;
-
-  if (q.type === "text") {
-    html += `<input type="text" id="response-input">`;
-  }
-
-  if (q.type === "date") {
-    html += `<input type="date" id="response-input">`;
-  }
-
-  if (q.type === "radio") {
-    html += q.options
-      .map(
-        (e) => `
-      <label>
-      <input type="radio" name="response-input" value="${e}">
-        ${e}
-      </label><br>
-    `,
-      )
-      .join("");
-  }
-
-  if (q.type === "checkbox") {
-    html += q.options
-      .map(
-        (opt) => `
-      <label>
-        <input type="checkbox" name="response-input" value="${opt}">
-        ${opt}
-      </label><br>
-    `,
-      )
-      .join("");
-  }
-
-  area.innerHTML = html;
-}
-
-function saveResponse() {
-  const q = questions[curQuestion];
-
-  if (q.type === "text" || q.type === "date") {
-    const input = document.getElementById("response-input");
-    if (!input.value) return false;
-    response[q.id] = input.value;
-  }
-
-  if (q.type === "radio") {
-    const selected = document.querySelector(
-      'input[name="response-input"]:checked',
-    );
-    if (!selected.value) return false;
-    if (selected) response[q.id] = selected.value;
-  }
-
-  if (q.type === "checkbox") {
-    const selected = document.querySelectorAll(
-      'input[name="response-input"]:checked',
-    );
-    let arr = Array.from(selected).map((e) => e.value);
-    if (!arr) return false;
-    response[q.id] = arr;
-  }
-  return true;
-}
-
-function changeLockerDisplay() {
-  // change locker img to opened img
-  unopenedLockers.delete(currentLockerID);
-  curLocker = lockers[currentLockerID];
-  curLocker.src = emptyImg;
-}
-
-// ads hanndling
-
+// ads db
 const ads3 = {
   // ads for first 3 demographic: name (no need) +  age + gender
   gundam: {
@@ -320,18 +133,18 @@ const ads3 = {
       age: new Set(["Middle age"]),
     },
     img: "adImgs/toolKit.png",
-    text: "Mech Fans: Your Next Build Just Dropped!",
+    text: "Work tools set very suitable for DIY enthusiasts, repairers, construction workers, mechanics, body shops etc.",
     action: "Buy NOW!",
   },
   candle: {
-    title: "Candle",
+    title: "Bath & Body Works Candle",
     url: "https://www.bathandbodyworks.com/p/champagne-toast-3-wick-candle-028013557?srsltid=AfmBOooUF7o4GvzsB2m6OOh8Ef-K5pgRb6S08V575lpxtXgIRRwLpKwVSUQ",
     tags: {
       gender: new Set(["Nonbinary", "Female"]),
       age: new Set(["Teenagers", "Young Adults", "Middle age"]),
     },
     img: "https://play-lh.googleusercontent.com/lETycvOJNvuKtnUHVZHSKvUj6IUx62hlUdpAlgaun1sKwU2fa3hzkVNJsiB4BoKeqIM=w416-h235-rw",
-    text: "Mech Fans: Your Next Build Just Dropped!",
+    text: "Pop, fizz, clink! Consider this your invite to a celebration for the senses.",
     action: "Buy NOW!",
   },
   perfume_set: {
@@ -342,7 +155,7 @@ const ads3 = {
       age: new Set(["Middle age"]),
     },
     img: "https://content.stylitics.com/images/items/20717653",
-    text: "Mech Fans: Your Next Build Just Dropped!",
+    text: "The sultry signature scent you’ve been waiting for!",
     action: "Buy NOW!",
   },
 };
@@ -646,7 +459,7 @@ const ads7 = {
     action: "Buy NOW!",
   },
 
-  steam:{
+  steam: {
     title: "Mewgenics!",
     url: "https://store.steampowered.com/app/686060/Mewgenics/",
     tags: {
@@ -694,7 +507,7 @@ const ads7 = {
     action: "Buy NOW!",
   },
 
-  game_chair:{
+  game_chair: {
     title: "SOONTRANS Massage Gaming Chair Office Chair with Footrest",
     url: "https://www.walmart.com/ip/Ferghana-Massage-Gaming-Chair-Office-Chair-Ergonomic-Game-Chair-Hight-Back-with-Lumbar-Pillow-and-Footrest-Gamer-Chairs-for-Adults-Kids-Blue/1299924365",
     tags: {
@@ -707,40 +520,52 @@ const ads7 = {
   },
 
   investing_book: {
-  title: "Start Investing for Less Than $100",
-  url: "https://www.amazon.com/s?k=investing+books",
-  tags: {
-    budget: new Set(["Under $100"]),
-    interest: new Set(["Finance"]),
+    title: "Start Investing for Less Than $100",
+    url: "https://www.amazon.com/s?k=investing+books",
+    tags: {
+      budget: new Set(["Under $100"]),
+      interest: new Set(["Finance"]),
+    },
+    img: "adImgs/investingBook.png",
+    text: "Learn how to grow your money with beginner investing guides.",
+    action: "Learn More",
   },
-  img: "adImgs/investingBook.png",
-  text: "Learn how to grow your money with beginner investing guides.",
-  action: "Learn More",
-},
 
   headphones: {
     title: "Baseus Inspire XH1 Adaptive Active Noise Cancelling Headphones",
     url: "https://www.amazon.com/dp/B0FLPY5H72?tag=cnet-buy-button-20&ascsubtag=eb7bc43c7a894fa4bdf8804e77f61682&geniuslink=true&th=1",
     tags: {
       budget: new Set(["Up to $100"]),
-      interest: new Set(["Fashion","Fitness", "Travel"]),
+      interest: new Set(["Fashion", "Fitness", "Travel"]),
     },
     img: "adImgs/headphones.png",
     text: "Enjoy an exceptional audio experience with Baseus’s finest headphones yet",
     action: "Buy NOW!",
   },
 
-  smart_home_gym: {
-  title: "Build Your Home Gym Under $500",
-  url: "https://www.roguefitness.com/",
-  tags: {
-    budget: new Set(["Up to $500"]),
-    interest: new Set(["Fitness"]),
+  ipad_drawing: {
+    title: "Create Art on an iPad",
+    url: "https://www.apple.com/ipad/",
+    tags: {
+      budget: new Set(["Under $500"]),
+      interest: new Set(["Art/Creativity"]),
+    },
+    img: "https://www.apple.com/v/ipad-air/ag/images/overview/closer-look/all-colors/slide_1A__u8zw91uc6iaq_large_2x.jpg",
+    text: "Draw, animate, and design anywhere with powerful creative tools.",
+    action: "Explore iPad",
   },
-  img: "adImgs/rogue.png",
-  text: "Upgrade your workouts with adjustable dumbbells and compact gym gear.",
-  action: "Start Training",
-},
+
+  smart_home_gym: {
+    title: "Build Your Home Gym Under $500",
+    url: "https://www.roguefitness.com/",
+    tags: {
+      budget: new Set(["Up to $500"]),
+      interest: new Set(["Fitness"]),
+    },
+    img: "adImgs/rogue.png",
+    text: "Upgrade your workouts with adjustable dumbbells and compact gym gear.",
+    action: "Start Training",
+  },
 
   gaming_console: {
     title: "Nintendo Switch 2 System",
@@ -754,16 +579,28 @@ const ads7 = {
     action: "Buy NOW!",
   },
 
+  headphones_expensive: {
+    title: "AirPods Max",
+    url: "https://www.apple.com/shop/buy-airpods/airpods-max/orange?fnode=612e0e50dfca9e02c22bfa17c388e6c455ba85602f42449cc6a99acc09c94ddad7ed0f7c281465ddd1e84faaa65ad3e4bfd8612c749a3749b86991d1ceef7ff4ebd468e5c97a09489eb8e7dfa7772c331e9eb9646edd2872bf8c863031a53c02019ca15b732f93c4c56da98e97d3433596117d84b52a50e850f5acc4abd0f797",
+    tags: {
+      budget: new Set(["Up to $500"]),
+      interest: new Set(["Fashion", "Fitness", "Travel"]),
+    },
+    img: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-max-select-202409-orange_FV1?wid=976&hei=916&fmt=jpeg&qlt=90&.v=azQxRkVJKzd6V3J0aGNqWFhLMzBmbVl3dU4zNmtlQ1czYnJUSEJUcWowRnJHdFc3SWNOdWRSclF6WTRFc2h1eFJnYUxCQWt1UDJiRlJNZVhPYkVVc2hXdERnUW81QWI5aTlucjZuTWh1dnk3Zm5tZm5FR0tlWnFHbkRhQU5lZmc",
+    text: "The ultimate over-ear personal listening experience in a variety of fresh colors. ",
+    action: "Buy NOW!",
+  },
+
   luxury_watch: {
-    title: "Luxury Swiss Watch",
-    url: "https://www.rolex.com/",
+    title: "Cosmograph Daytona - Rolex",
+    url: "https://www.rolex.com/watches/cosmograph-daytona",
     tags: {
       budget: new Set(["Whatever it costs"]),
       interest: new Set(["Fashion", "Finance"]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "adImgs/rolex.png",
+    text: "A legendary chronograph. An emblematic design. A reliable ally to start afresh.",
+    action: "Visit us",
   },
 
   luxury_resort: {
@@ -773,181 +610,429 @@ const ads7 = {
       budget: new Set(["Whatever it costs"]),
       interest: new Set(["Travel"]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "adImg/fourSeason.png",
+    text: "From Anguilla to Puerto Rico, embrace the spirit of the islands at our collection of beachfront resorts.",
+    action: "Book your stay",
   },
 };
 
 const ads8 = {
   clearance_store: {
-    title: "Massive Clearance Deals",
+    title: "Walmart Massive Clearance Deals",
     url: "https://www.walmart.com/clearance",
     tags: {
-      buyingHabit: new Set(["I look for the cheapest option."]),
+      buyingHabit: new Set([
+        "I look for the cheapest option.",
+        "I wait for sales or discounts",
+      ]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
-  },
-
-  coupon_browser_extension: {
-    title: "Never Miss a Coupon Again",
-    url: "https://www.joinhoney.com/",
-    tags: {
-      buyingHabit: new Set(["I wait for sales or discounts"]),
-    },
-    img: "",
-    text: "",
+    img: "adImgs/clearance.png",
+    text: "Clearance on your faves: 1,000s of savings—don’t miss out!",
     action: "Buy NOW!",
   },
 
   luxury_sports_car: {
-    title: "Drive the Car Everyone Notices",
+    title: "Lamborghini Temerario",
     url: "https://www.lamborghini.com/",
     tags: {
       buyingHabit: new Set(["I buy things that make people jealous of me."]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "adImgs/car.png",
+    text: "Driven by Dreams",
+    action: "Start Configuration!",
   },
 
   same_day_delivery: {
-    title: "Order Now, Delivered Today",
+    title: "Instacart",
     url: "https://www.instacart.com/",
     tags: {
       buyingHabit: new Set(["If I want it, I buy it immediately"]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "https://www.instacart.com/assets/homepage/affordability-hero-3a7ab0e389e5f4f278b4715eec95775f1d7d969323d22277199898ce605c6f56.png",
+    text: "Order now, delivery TODAY.",
+    action: "Sign Up",
   },
 
   price_tracking_tool: {
-    title: "Track Price History Before You Buy",
+    title: "camelcamelcamel",
     url: "https://camelcamelcamel.com/",
     tags: {
       buyingHabit: new Set([
         " I usually think about it for a while before buying.",
       ]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "adImgs/camel.png",
+    text: "Save money on your next Amazon purchase: Track Price History Before You Buy.",
+    action: "Visit us",
   },
 };
 
 const ads9 = {
   laptop_tradein: {
-    title: "Trade In Your Old Laptop for Credit",
+    title: "Best Buy Trade In",
     url: "https://www.bestbuy.com/site/services/trade-in",
     tags: {
       upgradeHabit: new Set(["Upgrade Eventually"]),
       interest: new Set(["Gaming", "Art/Creativity", "Finance"]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "https://www.slashgear.com/img/gallery/does-best-buy-offer-good-trade-in-value-heres-what-we-found/how-we-evaluated-best-buys-trade-in-offers-1758664667.jpg",
+    text: "The process is easy. Find your device and trade it in for a Best Buy eGift Card.",
+    action: "Learn more",
   },
 
   extended_warranty: {
-    title: "Protect Your Devices with Extended Warranty",
-    url: "https://www.squaretrade.com/",
+    title: "Allstate Phone Protection",
+    url: "https://www.squaretrade.com/phone-protection/",
     tags: {
       upgradeHabit: new Set(["Wait until my current one breaks"]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "adImgs/protection.png",
+    text: "2 in 3 smartphone owners experienced some type of damage in the past year. Allstate covers life’s accidents & common malfunctions.",
+    action: "Buy Protection",
   },
 
   subscription_upgrade_program: {
-    title: "Phone Upgrade Program — New Every Year",
+    title: "Iphone Upgrade Program",
     url: "https://www.apple.com/shop/iphone/iphone-upgrade-program",
     tags: {
       upgradeHabit: new Set(["Upgrade immediately"]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/iup-overview-landing-hero-202509?wid=1080&hei=1080&fmt=png-alpha&.v=RGs5dG5vUkVhSEY3RDZySmFPUDkyZU5ORDl5U1h2RysySnhSZ0RoTlZzNzVLdjhTM1RwNDdrTVJNZHIwU1lRVk5IS3ZKSGpDZ3JTaGVENmZKRzRSb2hsaTVsRTdNK3pNbmtBcnZTL3VNcUwrNmVjbmk5c1V4VVk2VEt3TGcxekg",
+    text: "The easiest way to upgrade to a new iPhone.",
+    action: "Join now",
   },
 };
 
 const ads10 = {
   budgeting_app: {
-    title: "Take Control of Your Finances",
+    title: "YNAB Budgeting App",
     url: "https://www.ynab.com/",
     tags: {
       worry: new Set(["Not having enough money"]),
-      interest: new Set(["Finance"]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "adImgs/ynab.png",
+    text: "Bad at money? YNAB can help.",
+    action: "Start your free trial",
   },
 
-  luxury_watch: {
-    title: "Stand Out With a Luxury Watch",
-    url: "https://www.rolex.com/",
+  luxury_apartment: {
+    title: "Luxury Apartments",
+    url: "https://www.zillow.com/",
     tags: {
       worry: new Set(["Falling behind others"]),
-      interest: new Set(["Fashion", "Finance"]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "https://cdn.confident-group.com/wp-content/uploads/2023/08/09144221/shutterstock_436927078.jpg",
+    text: "Success should look like something.",
+    action: "View Listings",
   },
 
   online_certification: {
-    title: "Earn a Professional Certificate Online",
+    title: "Coursera Professional Certificates",
     url: "https://www.coursera.org/professional-certificates",
     tags: {
       worry: new Set(["Job or career stability"]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "https://whop.com/blog/content/images/2024/11/Coursera-Review.webp",
+    text: "Get job-ready for an in-demand career",
+    action: "Launch your career",
   },
 
   couples_therapy: {
-    title: "Online Relationship Counseling",
-    url: "https://www.betterhelp.com/",
+    title: "growtherapy",
+    url: "https://growtherapy.com/start/couples-counseling/?g_acctid=735-200-2909&g_adgroupid=179317554658&g_adid=747617071624&g_adtype=search&g_campaign=Grow-Therapy%7CClient%7CSEM%7CTier1%7CNBD%7CPhrase-Exact%7CSpecialties&g_campaignid=20822246828&g_keyword=couples%20therapy&g_keywordid=kwd-24922970&g_network=g&utm_device=c&network=g&matchtype=e&geoid=1018329&utm_source=google&utm_medium=cpc&utm_campaign=179317554658&utm_content=747617071624&utm_term=couples%20therapy&cc_opt_out=true&gad_source=1&gad_campaignid=20822246828&gbraid=0AAAAABiEzVBy_X57dVTnRzuedAPjecvwM&gclid=Cj0KCQjwgr_NBhDFARIsAHiUWr6WXN_SYxEnUY02OEOYiQCEW-znu1U1x0WZDErKSPQdAFKiunsFAcAaArGJEALw_wcB",
     tags: {
       worry: new Set(["Relationships"]),
     },
-    img: "",
-    text: "",
-    action: "Buy NOW!",
+    img: "https://i.ytimg.com/vi/sneEA4cC0EM/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBYyMnh0LnYOFEl6_U0PHbutyjh0Q",
+    text: "Couples counseling, covered by insurance",
+    action: "Find a therapist",
   },
 
   fitness_tracker: {
-    title: "Track Your Health With a Smart Fitness Band",
+    title: "Google Fitbit Charge 6",
     url: "https://www.fitbit.com/",
     tags: {
       worry: new Set(["Health"]),
-      interest: new Set(["Fitness"]),
     },
-    img: "",
-    text: "",
+    img: "adImgs/fitbit.png",
+    text: "Google Fitbit keep you moving.",
     action: "Buy NOW!",
   },
 };
 
 const adsInds = [3, 4, 5, 7, 8, 9, 10];
 const actualAdsList = [ads3, ads4, ads5, ads7, ads8, ads9, ads10];
-let curAdsInd = -1;
+
+// all secrets
+const secrets = [
+  `In high school, I stole the mp3 player of a classmate. Went into the locker room during PE and snatched it. I didn't steal it because I wanted it or to sell it, I just did it because she was an awful judgmental queen bee and I wanted to get back at her. People saw me with it in my hands, so the next day I was called into the principal's office. I denied everything and they searched my bag and my room.
+
+They never found it. I buried the MP3 player in my garden as soon as I got home, and that garden is now a mega store parking lot. I've never admitted it to anyone.`,
+
+  `I'm tired of being an adult and just want someone to take care of me. I'm a single mom and the responsible caretaker person in some capacity for 35 of my 40 years. I have chronic health issues and I'm exhausted. Everyone sees me as dependable and responsible, but I wish I could take a long break where I don't have to worry about bills, decisions, or parenting.
+
+Also, my son gets extremely loud when gaming with his friends and it drives me insane. I feel guilty for getting irritated at him.`,
+
+  `I'm in a 2 year relationship but I still think about my previous partner. Before my current boyfriend I had a thing with a guy who was already in a relationship. I fell madly in love with him, but he eventually broke things off with me out of nowhere. I never got closure.
+
+Now I really love my boyfriend, but I don't think I'll ever love him as much as I loved the other guy. I still see him sometimes and my heart stops.`,
+
+  `In 1991 my business partner committed suicide by driving into a concrete barrier. He left a note on his computer explaining what he planned to do and apologizing for leaving me without a partner. I've never told anyone. Everyone thinks it was an accident.`,
+
+  `My friend hosted a birthday party and I found her passed out in vomit in her room. I rinsed her off in the shower and put her in bed. When I changed her clothes I realized she had soiled herself. I cleaned her up like a baby and put clean clothes on her. It was awkward explaining the next day, but I didn't want her to wake up like that.`,
+
+  `We put the cat to sleep. We didn't find him already dead. He had cancer, feline HIV, and no teeth. He was suffering badly. We lied about it because someone in the family doesn't believe in euthanasia and would have forced him to suffer longer.`,
+
+  `When I was 16 I accidentally ran over my friend's kitten while leaving her party. I felt the bump and knew what happened. I was terrified she'd never forgive me, so I kept driving. She called me crying later that night about it. We're still best friends today and she never knew.`,
+
+  `I haven't wanted to be alive for a long time. Not actively suicidal, but passively. Sometimes the feeling is quiet and sometimes it's loud. The world is beautiful and terrifying at the same time and it's a lot to process.`,
+
+  `I wish I was never born.`,
+
+  `If I feel ugly on a bad day, I can't go outside or interact with people. I feel completely incapable of functioning normally unless I look good.`,
+
+  `I want kids but my partner doesn't. I had an abortion last year and never told him that part of me didn't fully want it. I know admitting that would probably end our 11 year relationship, so I'll carry the grief alone.`,
+
+  `In sixth grade I lied about being pregnant because nobody paid attention to me and I wanted someone to care.`,
+];
+
+
+// ************************************************** //
+
+// Declaring state vars & handle localstorage //
+
+// ************************************************** //
+
+let unopenedLockers;
+let currentLockerID = -1;
+let curAdsInd;
 let computedAds = {};
+let curQuestion;
+let response = JSON.parse(localStorage.getItem("response")) ?? {};
+
+function clearCache() {
+  // clear cache when clicking da button
+  localStorage.clear();
+  location.reload();
+}
+
+window.onload = () => {
+  // restore data saved in localStorage
+  // restore unopened lockers
+  let savedLockers = JSON.parse(localStorage.getItem("unopenedLockers"));
+  if (savedLockers) {
+    unopenedLockers = new Set(savedLockers);
+  } else {
+    unopenedLockers = new Set();
+    for (let i = 0; i < lockerCount; i++) unopenedLockers.add(i);
+  }
+
+  // restore currentLockerID
+  currentLockerID = JSON.parse(localStorage.getItem("currentLockerID")) ?? -1;
+
+  // restore curAdsInd
+  curAdsInd = JSON.parse(localStorage.getItem("curAdsInd")) ?? -1;
+
+  // restore opened lockers visually
+  for (let i = 0; i < lockerCount; i++) {
+    if (!unopenedLockers.has(i)) {
+      currentLockerID = i;
+      lockers[i].src = emptyImg;
+    }
+  }
+
+  // restore revealed ads
+  for (let i = 0; i <= curAdsInd; i++) {
+    revealAd(i);
+  }
+
+  // restore response
+  // uh, i cant put it in here, because onload takes awhile to run, and it's asynchronous :( 
+  
+  // restore curQuestion
+  curQuestion = JSON.parse(localStorage.getItem("curQuestion")) ?? 0;
+};
+
+// ************************************** //
+
+// setting up imgs html //
+
+// ************************************** //
+
+const imgs = new Array(12).fill("single_locker.jpg");
+const emptyImg = "empty.png";
+
+let imgsHTML = "";
+
+imgs.forEach((img, ind) => {
+  imgsHTML += `<img src="${img}" class="locker" id="lock${ind}" />`;
+});
+const gridBox = document.getElementById("grid-box");
+gridBox.innerHTML = imgsHTML;
+
+
+// ************************************** //
+
+// Define HTML elements //
+
+// ************************************** //
+
+const lockers = Array.from(document.getElementsByClassName("locker"));
+const lockerCount = lockers.length;
+const overlay = document.getElementById("overlay");
+const zoomedLocker = document.getElementById("zoomedLocker");
+const secret = document.getElementById("secret");
+const parentQuestion = document.getElementById("parent-question");
+
+
+// ************************************** //
+
+// Functions ** //
+
+// ************************************** //
+
+function refreshOverlay() {
+  locker = lockers[currentLockerID];
+  if (unopenedLockers.has(currentLockerID)) {
+    // if the user hasnt opened this locker
+    zoomedLocker.src = locker.src;
+    parentQuestion.classList.remove("hidden");
+    secret.classList.add("hidden");
+    displayQuestion();
+  } else {
+    // if the user opened this locker
+    let textData = secrets[currentLockerID];
+    console.log("parent question", parentQuestion);
+    secret.classList.remove("hidden");
+    parentQuestion.classList.add("hidden");
+    secret.innerHTML = `<h1>${textData}</h1>`;
+  }
+}
+
+// When click on a locker, show the overlay
+lockers.forEach((locker, ind) => {
+  locker.addEventListener("click", (event) => {
+    if (overlay.classList.contains("hidden")) {
+      event.stopPropagation();
+      currentLockerID = ind;
+      overlay.classList.remove("hidden");
+
+      refreshOverlay();
+    }
+  });
+});
+
+function hideOverlay() {
+  overlay.classList.add("hidden");
+  curLocker = -1;
+}
+
+// when click outside of overlay, exit
+document.addEventListener("click", (event) => {
+  if (
+    !overlay.contains(event.target) &&
+    !overlay.classList.contains("hidden")
+  ) {
+    hideOverlay();
+  }
+});
+
+
+function displayQuestion() {
+  const q = questions[curQuestion];
+  const area = document.getElementById("question-area");
+  // console.log("area is", area);
+  let prompt = response["name"] ? response["name"] + ", " + q.prompt : q.prompt;
+  let html = `<p>${prompt}</p>`;
+
+  if (q.type === "text") {
+    html += `<input type="text" id="response-input">`;
+  }
+
+  if (q.type === "date") {
+    html += `<input type="date" id="response-input">`;
+  }
+
+  if (q.type === "radio") {
+    html += q.options
+      .map(
+        (e) => `
+      <label>
+      <input type="radio" name="response-input" value="${e}">
+        ${e}
+      </label><br>
+    `,
+      )
+      .join("");
+  }
+
+  if (q.type === "checkbox") {
+    html += q.options
+      .map(
+        (opt) => `
+      <label>
+        <input type="checkbox" name="response-input" value="${opt}">
+        ${opt}
+      </label><br>
+    `,
+      )
+      .join("");
+  }
+
+  area.innerHTML = html;
+}
+
+function saveResponse() {
+  const q = questions[curQuestion];
+
+  if (q.type === "text" || q.type === "date") {
+    const input = document.getElementById("response-input");
+    if (!input.value) return false;
+    response[q.id] = input.value;
+  }
+
+  if (q.type === "radio") {
+    const selected = document.querySelector(
+      'input[name="response-input"]:checked',
+    );
+    if (!selected) return false;
+    response[q.id] = selected.value;
+  }
+
+  if (q.type === "checkbox") {
+    const selected = document.querySelectorAll(
+      'input[name="response-input"]:checked',
+    );
+    let arr = Array.from(selected).map((e) => e.value);
+    if (!arr) return false;
+    response[q.id] = arr;
+  }
+  console.log("saved response", response)
+  localStorage.setItem("response", JSON.stringify(response));
+  return true;
+}
+
+function changeLockerDisplay() {
+  // change locker img to opened img
+  unopenedLockers.delete(currentLockerID);
+  curLocker = lockers[currentLockerID];
+  curLocker.src = emptyImg;
+  localStorage.setItem(
+    "unopenedLockers",
+    JSON.stringify(Array.from(unopenedLockers)),
+  );
+}
+
+// ads hanndling
 
 function revealAd(ind) {
-  curAd = document.getElementById(`ad${ind}`);
+  questionCnt = adsInds[ind];
+  curAd = document.getElementById(`ad${questionCnt}`);
   curAd.classList.remove("hidden");
-  let computedAds = computeAd();
-  console.log(computedAds);
+  let computedAds = computeAd(ind);
   choice = computedAds[0][1];
-  adchoice = actualAdsList[curAdsInd][choice];
-  console.log("choice is", adchoice);
-  console.log("img is", adchoice["img"]);
+  adchoice = actualAdsList[ind][choice];
+  console.log("my ad choice for ind", ind, "is", adchoice);
   let direction = curAd.classList.contains("horizontal")
     ? "horizontal"
     : "vertical";
@@ -957,8 +1042,8 @@ function revealAd(ind) {
               <img src=${adchoice["img"]} class="${direction}Ad">
               
               <div class="${direction}Text">
-                <h1> ${adchoice.title} </h1>
-                <h2> ${adchoice.text} </h2>
+                <p class="title"> ${adchoice.title} </p>
+                <p class = "text">${adchoice.text} </ps>
                 <div class="fakeBnt">${adchoice["action"]}</div>
               </div>
             </div>
@@ -967,11 +1052,10 @@ function revealAd(ind) {
   curAd.innerHTML = html;
 }
 
-function computeAd() {
+function computeAd(ind) {
+  console.log("computing for ind", ind);
   let curComputed = [];
-  console.log("cur ad ind", curAdsInd);
-  console.log("current user profile", response);
-  curAdLst = actualAdsList[curAdsInd];
+  curAdLst = actualAdsList[ind];
   for (const [ad, adInfo] of Object.entries(curAdLst)) {
     console.log("cur ad considering", ad, "w ad info", adInfo);
     let score = 0;
@@ -992,11 +1076,14 @@ function computeAd() {
     curComputed.push([score, ad]);
   }
   curComputed.sort((a, b) => b[0] - a[0]);
+  console.log("result is", curComputed.slice(0, 2));
   return curComputed.slice(0, 2); // return the best 3 ads
 }
 
 function clickSubmit() {
   let saveResult = saveResponse();
+
+  if (!secret.classList.contains("hidden")) return;
   if (!parentQuestion.classList.contains("hidden") && !saveResult) {
     let name = response["name"] ? response["name"] + ", " : "";
     alert(
@@ -1007,11 +1094,13 @@ function clickSubmit() {
   changeLockerDisplay();
   refreshOverlay();
   curQuestion++;
+  localStorage.setItem("curQuestion", JSON.stringify(curQuestion));
   // console.log("curqest", curQuestion);
 
   if (curAdsInd < adsInds.length - 1 && curQuestion == adsInds[curAdsInd + 1]) {
     curAdsInd++;
-    revealAd(adsInds[curAdsInd]);
+    localStorage.setItem("curAdsInd", JSON.stringify(curAdsInd));
+    revealAd(curAdsInd);
   }
 
   if (curQuestion < questions.length) {
