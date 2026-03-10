@@ -282,7 +282,7 @@ const ads5 = {
       gender: new Set(["Male", "Nonbinary"]),
     },
     img: "adImgs/maleTrenchCoat.png",
-    text: "Sharp, timeless, and built for the modern man, this trench coat adds effortless confidence to every step you take.",
+    text: "Sharp, timeless, and built for the modern man.",
     action: "Buy NOW!",
   },
 
@@ -308,7 +308,7 @@ const ads5 = {
       gender: new Set(["Female"]),
     },
     img: "https://coach.scene7.com/is/image/Coach/can90_b4bk_a0?$desktopProduct$",
-    text: "Turn heads wherever you go: Brook Flap Chain Bag blends sleek luxury with just the right touch of bold elegance.",
+    text: "Turn heads wherever you go: sleek luxury with just the right touch of bold elegance.",
     action: "Buy NOW!",
   },
 
@@ -333,7 +333,7 @@ const ads5 = {
       age: new Set(["Teenagers", "Young Adults", "Middle age"]),
     },
     img: "https://target.scene7.com/is/image/Target/GUEST_464b976c-e4fe-4021-89f7-9daa8f733b30?wid=1200&hei=1200&qlt=80",
-    text: "Your future flexible self will thank you: this non-slip yoga mat is ready whenever you finally decide to show up.",
+    text: "Your future flexible self will thank you.",
     action: "Buy NOW!",
   },
 
@@ -369,7 +369,7 @@ const ads5 = {
       interest: new Set(["Travel"]),
     },
     img: "https://img.freepik.com/free-photo/beautiful-girl-standing-boat-looking-mountains-ratchaprapha-dam-khao-sok-national-park-surat-thani-province-thailand_335224-849.jpg?semt=ais_rp_50_assets&w=740&q=80",
-    text: "Compare cheap airline ticket prices at a glance from a large inventory of carriers on Expedia. You can get cheap flights by staying flexible with travel dates.",
+    text: "Compare cheap airline ticket prices at a glance.",
     action: "Buy NOW!",
   },
 };
@@ -400,14 +400,14 @@ const ads7 = {
   },
 
   free_workout_app: {
-    title: "Free Guided Workouts with Nike Training Club",
+    title: "Free Guided Workouts",
     url: "https://www.nike.com/ntc-app",
     tags: {
       budget: new Set(["Almost nothing"]),
       interest: new Set(["Fitness"]),
     },
     img: "https://static.digit.in/default/d4e0dd2d70b4524f85297fc0c768f6f0dbb41227.jpeg",
-    text: "The Nike Training Club app will make your fitness habits stick with quicker options, goal-setting tools, and new content daily. ",
+    text: "The Nike Training Club app will make your fitness habits stick. ",
     action: "Start Training",
   },
 
@@ -431,7 +431,7 @@ const ads7 = {
       interest: new Set(["Art/Creativity"]),
     },
     img: "https://d1nl7v5tzifdth.cloudfront.net/fojnsgj5hqagns0bpzxpei2s.webp",
-    text: "Welcome to Lake: a coloring app with the largest collection of coloring books by independent illustrators. ",
+    text: "Welcome to Lake: a coloring app with the largest collection of coloring books. ",
     action: "Color Now",
   },
 
@@ -455,7 +455,7 @@ const ads7 = {
       interest: new Set(["Fitness"]),
     },
     img: "https://dks.scene7.com/is/image/GolfGalaxy/ETHA203_NOCOLOR_REG-alt3?wid=2000&hei=2000&fit=constrain&fmt=pjpeg",
-    text: "Add resistance to a wide variety of upper and lower body exercises with the ETHOS® Super Band, designed with a durable, compact construction that provides maximum toning results with minimal equipment.",
+    text: "Add resistance to a wide variety of upper and lower body exercises.",
     action: "Buy NOW!",
   },
 
@@ -491,7 +491,7 @@ const ads7 = {
       interest: new Set(["Art/Creativity"]),
     },
     img: "https://prodimage.images-bn.com/pimages/9798217036523_p0_v1_s600x595.jpg",
-    text: "Savor the little joys and cozy moments of the hygge lifestyle with Fuzzy Hygge - an irresistible coloring book that will make your heart melt into a puddle of gooey cuteness.",
+    text: "Savor the little joys and cozy moments of the hygge lifestyle with Fuzzy Hygge.",
     action: "Color Now",
   },
 
@@ -503,7 +503,7 @@ const ads7 = {
       interest: new Set(["Art/Creativity"]),
     },
     img: "adImgs/watercolor.png",
-    text: "Elevate your artistry with our three distinct watercolor sets, available in 50, 100, or 168 stunning colors. ",
+    text: "Elevate your artistry with our stunning colors. ",
     action: "Buy NOW!",
   },
 
@@ -687,7 +687,7 @@ const ads9 = {
       upgradeHabit: new Set(["Wait until my current one breaks"]),
     },
     img: "adImgs/protection.png",
-    text: "2 in 3 smartphone owners experienced some type of damage in the past year. Allstate covers life’s accidents & common malfunctions.",
+    text: "2 in 3 smartphone owners experienced some type of damage in the past year.",
     action: "Buy Protection",
   },
 
