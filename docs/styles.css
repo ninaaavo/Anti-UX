@@ -17,8 +17,7 @@ body {
   font-style: italic;
 }
 
-
-#grid-box>img {
+#grid-box > img {
   border: 4px solid black;
   width: 100%;
 }
@@ -40,8 +39,6 @@ body {
   justify-items: center;
 }
 
-
-
 /* break point 4 phone */
 @media (max-width: 1000px) {
   #grid-box {
@@ -50,7 +47,7 @@ body {
   #zoomedLocker {
     display: none;
   }
-  #parent-question{
+  #parent-question {
     grid-template-columns: none;
   }
 }
@@ -76,18 +73,18 @@ a {
   padding: 10px 40px;
 }
 
-#question-form{
-    margin-bottom: 20%;
+#question-form {
+  margin-bottom: 20%;
 }
 
-#question-form > h2{
-    font-size: 4rem;
+#question-form > h2 {
+  font-size: 4rem;
 }
-#question-area{
-    font-size: 3rem;
+#question-area {
+  font-size: 3rem;
 }
-#question-area>label{
-    font-size: 2rem;
+#question-area > label {
+  font-size: 2rem;
 }
 #zoomedLocker {
   height: 60%;
@@ -106,27 +103,33 @@ a {
     "ROND" 0;
 }
 
-input{
-    font-size: 2rem;
-    height: 40px;
-    padding: 5px;
-    font-family: "Google Sans Flex", sans-serif;
+input {
+  font-size: 2rem;
+  height: 40px;
+  padding: 5px;
+  font-family: "Google Sans Flex", sans-serif;
 }
 
-#submit-btn{
-    font-size: 1rem;
-    padding: 5px;
-    margin: 10px 0;
-    font-family: "Google Sans Flex", sans-serif;
+textarea {
+  font-size: 1.5rem;
+  font-family: "Google Sans Flex", sans-serif;
+  padding: 5px;
 }
 
-#secret>h1{
-    font-size: 4rem;
-    font-weight: bold;
+#submit-btn {
+  font-size: 1rem;
+  padding: 5px;
+  margin: 10px 0;
+  font-family: "Google Sans Flex", sans-serif;
 }
-#secret>p{
-    font-size: 2rem;
-    font-family: "Google Sans Flex", sans-serif;
+
+#secret > h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+#secret > p {
+  font-size: 2rem;
+  font-family: "Google Sans Flex", sans-serif;
 }
 
 #ad3 {
@@ -139,7 +142,6 @@ input{
   border: 3px solid;
   animation: borderColorChange 1s infinite;
 }
-
 
 #ad4 {
   position: fixed;
@@ -160,13 +162,18 @@ input{
   height: 40vh;
   width: 40vh;
   background-color: blueviolet;
-
 }
 
-@keyframes borderColorChange{
-  0% {border-color: red;}
-  50% {border-color: yellow;}
-  100% {border-color: green;}
+@keyframes borderColorChange {
+  0% {
+    border-color: red;
+  }
+  50% {
+    border-color: yellow;
+  }
+  100% {
+    border-color: green;
+  }
 }
 #ad7 {
   position: fixed;
@@ -203,7 +210,6 @@ input{
   bottom: 40vh;
   background-color: rgb(92, 76, 117);
 }
-
 
 .hidden {
   display: none !important;

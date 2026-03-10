@@ -4,7 +4,7 @@
 
 // ******************* //
 
-// question db 
+// question db
 const questions = [
   { id: "name", type: "text", prompt: "How should I call you?" },
   { id: "birthday", type: "date", prompt: "what is your birthday?" },
@@ -105,7 +105,7 @@ const questions = [
   },
   {
     id: "userSecret",
-    type: "text",
+    type: "textBox",
     prompt:
       "tell me something about yourself that you'd rather no one knows, I promise to keep it between us.",
   },
@@ -796,7 +796,6 @@ Now I really love my boyfriend, but I don't think I'll ever love him as much as 
   `In sixth grade I lied about being pregnant because nobody paid attention to me and I wanted someone to care.`,
 ];
 
-
 // ************************************************** //
 
 // Declaring state vars & handle localstorage //
@@ -848,12 +847,12 @@ window.onload = () => {
   }
 
   // restore response
-  // uh, i cant put it in here, because onload takes awhile to run, and it's asynchronous :( 
-  
+  // uh, i cant put it in here, because onload takes awhile to run, and it's asynchronous :(
+
   //restore userSecretInd
   userSecretInd = JSON.parse(localStorage.getItem("userSecretInd")) ?? -1;
-  if (userSecretInd !== -1){
-    secrets[userSecretInd] = response["userSecret"]
+  if (userSecretInd !== -1) {
+    secrets[userSecretInd] = response["userSecret"];
   }
 
   // restore curQuestion
@@ -877,7 +876,6 @@ imgs.forEach((img, ind) => {
 const gridBox = document.getElementById("grid-box");
 gridBox.innerHTML = imgsHTML;
 
-
 // ************************************** //
 
 // Define HTML elements //
@@ -890,7 +888,6 @@ const overlay = document.getElementById("overlay");
 const zoomedLocker = document.getElementById("zoomedLocker");
 const secret = document.getElementById("secret");
 const parentQuestion = document.getElementById("parent-question");
-
 
 // ************************************** //
 
@@ -908,18 +905,18 @@ function refreshOverlay() {
     displayQuestion();
   } else {
     // if the user opened this locker
-    
-    if (curQuestion === 11){
+
+    if (curQuestion === 11) {
       userSecretInd = currentLockerID;
       localStorage.setItem("userSecretInd", JSON.stringify(userSecretInd));
-      secrets[currentLockerID] = response["userSecret"]
-    } 
+      secrets[currentLockerID] = response["userSecret"];
+    }
     let textData = secrets[currentLockerID];
     console.log("parent question", parentQuestion);
     secret.classList.remove("hidden");
     parentQuestion.classList.add("hidden");
     secret.innerHTML = `
-    <h1 class="geo-regular">Thank you, ${response["name"]}, I have learned a bit about you. Here is a secret in exchange:</h1>
+    <h1 class="geo-regular">Thank you, ${response["name"]}, that is Good to Know. Here is a secret in exchange:</h1>
     <p>${textData}</p>
     `;
   }
@@ -952,7 +949,6 @@ document.addEventListener("click", (event) => {
     hideOverlay();
   }
 });
-
 
 function displayQuestion() {
   const q = questions[curQuestion];
@@ -995,13 +991,34 @@ function displayQuestion() {
       .join("");
   }
 
+  if (q.type === "textBox") {
+    html += `<textarea id="response-input" rows="4" cols="40" placeholder="My secret is..."></textarea>`;
+  }
+
   area.innerHTML = html;
 }
 
 function saveResponse() {
   const q = questions[curQuestion];
 
-  if (q.type === "text" || q.type === "date") {
+  if (q.type === "date") {
+    const input = document.getElementById("response-input");
+    if (!input.value) return false;
+
+    const birthDate = new Date(input.value);
+    const today = new Date();
+
+    let age = today.getFullYear() - birthDate.getFullYear();
+
+    let category;
+    if (age < 20) category = "Teenagers";
+    else if (age < 35) category = "Young Adults";
+    else category = "Middle Age";
+
+    response["age"] = category;
+  }
+
+  if (q.type === "text") {
     const input = document.getElementById("response-input");
     if (!input.value) return false;
     response[q.id] = input.value;
@@ -1023,7 +1040,12 @@ function saveResponse() {
     if (!arr) return false;
     response[q.id] = arr;
   }
-  console.log("saved response", response)
+  if (q.type === "textBox") {
+    const input = document.getElementById("response-input");
+    if (!input.value.trim()) return false;
+    response[q.id] = input.value;
+  }
+  console.log("saved response", response);
   localStorage.setItem("response", JSON.stringify(response));
   return true;
 }
@@ -1049,7 +1071,7 @@ function revealAd(ind) {
   choice = computedAds[0][1];
   adchoice = actualAdsList[ind][choice];
   console.log("my ad choice for ind", ind, "is", adchoice);
-  
+
   let direction = curAd.classList.contains("horizontal")
     ? "horizontal"
     : "vertical";
@@ -1118,12 +1140,6 @@ function clickSubmit() {
     curAdsInd++;
     localStorage.setItem("curAdsInd", JSON.stringify(curAdsInd));
     revealAd(curAdsInd);
-  }
-
-  if (curQuestion < questions.length) {
-    displayQuestion();
-  } else {
-    console.log("All responses:", response);
   }
 }
 
