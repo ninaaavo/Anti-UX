@@ -159,7 +159,7 @@ textarea {
   top: 30%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 25fvw;
+  height: 25vw;
   width: 25vw;
   background-color: blueviolet;
 }
