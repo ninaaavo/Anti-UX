@@ -120,6 +120,15 @@ input{
     font-family: "Google Sans Flex", sans-serif;
 }
 
+#secret>h1{
+    font-size: 4rem;
+    font-weight: bold;
+}
+#secret>p{
+    font-size: 2rem;
+    font-family: "Google Sans Flex", sans-serif;
+}
+
 #ad3 {
   position: fixed;
   height: 15vh;

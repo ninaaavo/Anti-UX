@@ -104,7 +104,7 @@ const questions = [
     ],
   },
   {
-    id: "secret",
+    id: "userSecret",
     type: "text",
     prompt:
       "tell me something about yourself that you'd rather no one knows, I promise to keep it between us.",
@@ -809,6 +809,7 @@ let curAdsInd;
 let computedAds = {};
 let curQuestion;
 let response = JSON.parse(localStorage.getItem("response")) ?? {};
+let userSecretInd;
 
 function clearCache() {
   // clear cache when clicking da button
@@ -849,6 +850,12 @@ window.onload = () => {
   // restore response
   // uh, i cant put it in here, because onload takes awhile to run, and it's asynchronous :( 
   
+  //restore userSecretInd
+  userSecretInd = JSON.parse(localStorage.getItem("userSecretInd")) ?? -1;
+  if (userSecretInd !== -1){
+    secrets[userSecretInd] = response["userSecret"]
+  }
+
   // restore curQuestion
   curQuestion = JSON.parse(localStorage.getItem("curQuestion")) ?? 0;
 };
@@ -901,11 +908,20 @@ function refreshOverlay() {
     displayQuestion();
   } else {
     // if the user opened this locker
+    
+    if (curQuestion === 11){
+      userSecretInd = currentLockerID;
+      localStorage.setItem("userSecretInd", JSON.stringify(userSecretInd));
+      secrets[currentLockerID] = response["userSecret"]
+    } 
     let textData = secrets[currentLockerID];
     console.log("parent question", parentQuestion);
     secret.classList.remove("hidden");
     parentQuestion.classList.add("hidden");
-    secret.innerHTML = `<h1>${textData}</h1>`;
+    secret.innerHTML = `
+    <h1 class="geo-regular">Thank you, ${response["name"]}, I have learned a bit about you. Here is a secret in exchange:</h1>
+    <p>${textData}</p>
+    `;
   }
 }
 
